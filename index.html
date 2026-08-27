@@ -539,7 +539,6 @@
             background: #3498db;
         }
 
-        /* ===== MODAL ===== */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -736,7 +735,6 @@
 </head>
 <body>
 
-    <!-- ===== HEADER ===== -->
     <header>
         <div class="logo">
             <i class="fas fa-crown"></i>
@@ -768,7 +766,6 @@
         </div>
     </header>
 
-    <!-- ===== HERO ===== -->
     <section class="hero">
         <div class="tagline">
             <i class="fas fa-shield-alt"></i> تیم رسمی GM Kids
@@ -784,7 +781,6 @@
         </p>
     </section>
 
-    <!-- ===== STATS ===== -->
     <div class="stats">
         <div class="stat-item">
             <div class="number">۶</div>
@@ -804,7 +800,6 @@
         </div>
     </div>
 
-    <!-- ===== TEAM ===== -->
     <section class="section" id="team">
         <div class="section-title">
             <i class="fas fa-users"></i>
@@ -813,7 +808,6 @@
         <div class="team-grid" id="teamGrid"></div>
     </section>
 
-    <!-- ===== VIDEOS ===== -->
     <section class="section" id="videos">
         <div class="section-title">
             <i class="fas fa-video"></i>
@@ -822,7 +816,6 @@
         <div class="video-grid" id="videoGrid"></div>
     </section>
 
-    <!-- ===== CHAT ===== -->
     <section class="section" id="chat">
         <div class="section-title">
             <i class="fas fa-comments"></i>
@@ -847,7 +840,6 @@
         </div>
     </section>
 
-    <!-- ===== FOOTER ===== -->
     <footer>
         <div class="copy">
             <i class="fas fa-crown" style="color:#f1c40f;"></i>
@@ -861,10 +853,9 @@
         </div>
     </footer>
 
-    <!-- ===== MODAL ===== -->
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal">
-            <h2 id="modalTitle">ورود به حساب</h2>
+            <h2 id="modalTitle">🔑 ورود به حساب</h2>
             <input type="text" id="modalName" placeholder="نام کاربری" />
             <input type="text" id="modalCode" placeholder="کد (فقط برای ادمین/اونر)" />
             <div class="modal-buttons">
@@ -884,45 +875,20 @@
         // ===== CONFIG =====
         // ============================================================
 
-        const TEAM_NAMES = {
-            owner: ['باراد'],
-            admin: ['امیر', 'اهورا'],
-            member: ['احسان', 'یاسین', 'ماهان']
-        };
-
         const CODES = {
             owner: 'GM2026',
             admin: 'GMADMIN'
         };
 
-        const TEAM_MEMBERS = [
-            { name: 'باراد', role: 'owner', emoji: '👑', status: 'آنلاین' },
-            { name: 'امیر', role: 'admin', emoji: '🛡️', status: 'آنلاین' },
-            { name: 'اهورا', role: 'admin', emoji: '⚡', status: 'آنلاین' },
-            { name: 'احسان', role: 'member', emoji: '🎯', status: 'آنلاین' },
-            { name: 'یاسین', role: 'member', emoji: '🔥', status: 'آنلاین' },
-            { name: 'ماهان', role: 'member', emoji: '💪', status: 'آنلاین' }
+        // اعضای ثابت تیم
+        const FIXED_MEMBERS = [
+            { name: 'باراد', role: 'owner', emoji: '👑' },
+            { name: 'امیر', role: 'admin', emoji: '🛡️' },
+            { name: 'اهورا', role: 'admin', emoji: '⚡' },
+            { name: 'احسان', role: 'member', emoji: '🎯' },
+            { name: 'یاسین', role: 'member', emoji: '🔥' },
+            { name: 'ماهان', role: 'member', emoji: '💪' }
         ];
-
-        const SAMPLE_VIDEOS = [{
-            id: 1,
-            title: '🎮 کلیپ گیمینگ GM Kids - قسمت اول',
-            uploader: 'باراد',
-            url: 'https://www.w3schools.com/html/mov_bbb.mp4',
-            type: 'video'
-        }, {
-            id: 2,
-            title: '⚽ گل زیبا در فیفا - امیر',
-            uploader: 'امیر',
-            url: 'https://www.w3schools.com/html/mov_bbb.mp4',
-            type: 'video'
-        }, {
-            id: 3,
-            title: '🎬 تریلر بازی جدید - اهورا',
-            uploader: 'اهورا',
-            url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-            type: 'youtube'
-        }];
 
         // ============================================================
         // ===== STATE =====
@@ -932,12 +898,26 @@
         let currentRole = null;
         let messages = [];
         let modalMode = 'login';
+        let allMembers = [];
 
         // ============================================================
         // ===== INIT =====
         // ============================================================
 
         function init() {
+            // Load members from localStorage or use fixed
+            const savedMembers = localStorage.getItem('gmMembers');
+            if (savedMembers) {
+                try {
+                    allMembers = JSON.parse(savedMembers);
+                } catch (e) {
+                    allMembers = [...FIXED_MEMBERS];
+                }
+            } else {
+                allMembers = [...FIXED_MEMBERS];
+                localStorage.setItem('gmMembers', JSON.stringify(allMembers));
+            }
+
             renderTeam();
             renderVideos();
 
@@ -971,6 +951,7 @@
             console.log('🎮 GM Kids loaded!');
             console.log('👑 Owner code: GM2026');
             console.log('🛡️ Admin code: GMADMIN');
+            console.log('👥 اعضا:', allMembers.map(m => m.name).join(', '));
         }
 
         function getDefaultMessages() {
@@ -991,14 +972,14 @@
 
         function renderTeam() {
             const grid = document.getElementById('teamGrid');
-            grid.innerHTML = TEAM_MEMBERS.map(m => `
+            grid.innerHTML = allMembers.map(m => `
                 <div class="team-card">
-                    <div class="avatar-big ${m.role}">${m.emoji}</div>
+                    <div class="avatar-big ${m.role}">${m.emoji || '⭐'}</div>
                     <h4>${m.name}</h4>
                     <span class="role-tag ${m.role}">
                         ${m.role === 'owner' ? '👑 Owner' : m.role === 'admin' ? '🛡️ Admin' : '⭐ Member'}
                     </span>
-                    <div class="status"><i class="fas fa-circle"></i> ${m.status}</div>
+                    <div class="status"><i class="fas fa-circle"></i> آنلاین</div>
                 </div>
             `).join('');
         }
@@ -1009,7 +990,27 @@
 
         function renderVideos() {
             const grid = document.getElementById('videoGrid');
-            grid.innerHTML = SAMPLE_VIDEOS.map(v => `
+            const videos = [{
+                id: 1,
+                title: '🎮 کلیپ گیمینگ GM Kids - قسمت اول',
+                uploader: 'باراد',
+                url: 'https://www.w3schools.com/html/mov_bbb.mp4',
+                type: 'video'
+            }, {
+                id: 2,
+                title: '⚽ گل زیبا در فیفا - امیر',
+                uploader: 'امیر',
+                url: 'https://www.w3schools.com/html/mov_bbb.mp4',
+                type: 'video'
+            }, {
+                id: 3,
+                title: '🎬 تریلر بازی جدید - اهورا',
+                uploader: 'اهورا',
+                url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                type: 'youtube'
+            }];
+
+            grid.innerHTML = videos.map(v => `
                 <div class="video-card">
                     <div class="video-wrapper">
                         ${v.type === 'youtube'
@@ -1066,10 +1067,7 @@
             const container = document.getElementById('onlineList');
             const countSpan = document.getElementById('onlineCount');
 
-            let users = [];
-            TEAM_MEMBERS.forEach(m => {
-                users.push({ name: m.name, role: m.role });
-            });
+            let users = allMembers.map(m => ({ name: m.name, role: m.role }));
 
             if (currentUser && !users.find(u => u.name === currentUser)) {
                 users.push({ name: currentUser, role: currentRole || 'member' });
@@ -1131,7 +1129,7 @@
             closeModal();
             setTimeout(() => {
                 openModal(modalMode === 'login' ? 'register' : 'login');
-            }, 200);
+            }, 300);
         }
 
         function handleModalAction() {
@@ -1144,87 +1142,86 @@
                 return;
             }
 
-            // Check if name is already taken
-            const allNames = TEAM_MEMBERS.map(m => m.name);
-            if (modalMode === 'register' && allNames.includes(name)) {
-                error.textContent = 'این اسم قبلاً ثبت شده داداش!';
-                return;
-            }
+            // Check if name exists in members
+            const existingMember = allMembers.find(m => m.name === name);
 
-            // Determine role based on code
-            let role = 'member';
-            if (code === CODES.owner) {
-                role = 'owner';
-            } else if (code === CODES.admin) {
-                role = 'admin';
-            } else if (code && code !== '') {
-                error.textContent = 'کد اشتباهه داداش!';
-                return;
-            }
+            if (modalMode === 'register') {
+                if (existingMember) {
+                    error.textContent = 'این اسم قبلاً ثبت شده داداش!';
+                    return;
+                }
 
-            // For login, check if user exists
-            if (modalMode === 'login') {
-                const found = TEAM_MEMBERS.find(m => m.name === name);
-                if (!found && name !== 'باراد' && name !== 'امیر' && name !== 'اهورا' &&
-                    name !== 'احسان' && name !== 'یاسین' && name !== 'ماهان') {
+                // Determine role based on code
+                let role = 'member';
+                if (code === CODES.owner) {
+                    role = 'owner';
+                } else if (code === CODES.admin) {
+                    role = 'admin';
+                } else if (code && code !== '') {
+                    error.textContent = 'کد اشتباهه داداش!';
+                    return;
+                }
+
+                // Add new member
+                const newMember = { name, role, emoji: '⭐' };
+                allMembers.push(newMember);
+                localStorage.setItem('gmMembers', JSON.stringify(allMembers));
+                renderTeam();
+
+                // Set current user
+                currentUser = name;
+                currentRole = role;
+                localStorage.setItem('gmUser', JSON.stringify({ name, role }));
+                updateUIForUser();
+                updateOnlineList();
+                closeModal();
+
+                messages.push({
+                    user: '🎮 سیستم',
+                    text: `${name} به تیم پیوست داداش! 🎉`,
+                    time: getCurrentTime()
+                });
+                localStorage.setItem('gmMessages', JSON.stringify(messages));
+                renderChat();
+
+            } else { // LOGIN
+                if (!existingMember) {
                     error.textContent = 'این کاربر وجود نداره داداش! اول ثبت‌نام کن.';
                     return;
                 }
 
-                // If code provided, verify it matches the user
+                // If code provided, verify it
                 if (code) {
-                    const expectedRole = allNames.includes(name) ?
-                        TEAM_MEMBERS.find(m => m.name === name)?.role :
-                        null;
-                    if (expectedRole === 'owner' && code !== CODES.owner) {
+                    if (existingMember.role === 'owner' && code !== CODES.owner) {
                         error.textContent = 'کد Owner اشتباهه!';
                         return;
                     }
-                    if (expectedRole === 'admin' && code !== CODES.admin) {
+                    if (existingMember.role === 'admin' && code !== CODES.admin) {
                         error.textContent = 'کد Admin اشتباهه!';
                         return;
                     }
-                    if (expectedRole) {
-                        role = expectedRole;
-                    }
-                } else {
-                    // If no code, use existing role
-                    const found = TEAM_MEMBERS.find(m => m.name === name);
-                    if (found) {
-                        role = found.role;
+                    if (code && code !== CODES.owner && code !== CODES.admin) {
+                        error.textContent = 'کد اشتباهه داداش!';
+                        return;
                     }
                 }
-            }
 
-            // Register new member
-            if (modalMode === 'register') {
-                // Add to team members
-                TEAM_MEMBERS.push({
-                    name: name,
-                    role: role,
-                    emoji: '⭐',
-                    status: 'آنلاین'
+                // Set current user
+                currentUser = name;
+                currentRole = existingMember.role;
+                localStorage.setItem('gmUser', JSON.stringify({ name, role: currentRole }));
+                updateUIForUser();
+                updateOnlineList();
+                closeModal();
+
+                messages.push({
+                    user: '🎮 سیستم',
+                    text: `${name} وارد شد داداش! 🚀`,
+                    time: getCurrentTime()
                 });
-                renderTeam();
+                localStorage.setItem('gmMessages', JSON.stringify(messages));
+                renderChat();
             }
-
-            // Set current user
-            currentUser = name;
-            currentRole = role;
-            localStorage.setItem('gmUser', JSON.stringify({ name, role }));
-            updateUIForUser();
-            updateOnlineList();
-            closeModal();
-
-            // Send system message
-            const action = modalMode === 'login' ? 'وارد شد' : 'به تیم پیوست';
-            messages.push({
-                user: '🎮 سیستم',
-                text: `${name} ${action} داداش! 🎉`,
-                time: getCurrentTime()
-            });
-            localStorage.setItem('gmMessages', JSON.stringify(messages));
-            renderChat();
         }
 
         // ============================================================
@@ -1243,8 +1240,9 @@
                 userPanel.style.display = 'flex';
                 nameDisplay.textContent = currentUser;
                 avatar.textContent = currentUser.charAt(0);
-                roleBadge.textContent = currentRole === 'owner' ? '👑 Owner' :
+                const roleText = currentRole === 'owner' ? '👑 Owner' :
                     currentRole === 'admin' ? '🛡️ Admin' : '⭐ Member';
+                roleBadge.textContent = roleText;
                 roleBadge.className = 'role-badge ' + (currentRole || 'member');
             } else {
                 authBtns.style.display = 'flex';
@@ -1280,7 +1278,6 @@
 
         document.addEventListener('DOMContentLoaded', init);
 
-        // Close modal on overlay click
         document.getElementById('modalOverlay').addEventListener('click', function(e) {
             if (e.target === this) closeModal();
         });
