@@ -3,16 +3,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GM Kids Gaming | صفحه اصلی</title>
+    <title>GM Kids Gaming | تیم ما</title>
 
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700;900&display=swap" rel="stylesheet" />
 
     <style>
-        /* ===== RESET & BASE ===== */
         * {
             margin: 0;
             padding: 0;
@@ -21,20 +17,14 @@
 
         body {
             font-family: 'Vazirmatn', sans-serif;
-            background: #0b0e1a;
+            background: #0a0d1a;
             color: #e4e6f0;
             min-height: 100vh;
             overflow-x: hidden;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* ===== SCROLLBAR ===== */
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 6px;
         }
         ::-webkit-scrollbar-track {
             background: #141a2b;
@@ -44,15 +34,15 @@
             border-radius: 10px;
         }
 
-        /* ===== HEADER / NAVBAR ===== */
+        /* ===== HEADER ===== */
         header {
-            background: rgba(11, 14, 26, 0.92);
+            background: rgba(10, 13, 26, 0.95);
             backdrop-filter: blur(14px);
-            padding: 16px 40px;
+            padding: 14px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(108, 92, 231, 0.25);
+            border-bottom: 2px solid #6c5ce7;
             position: sticky;
             top: 0;
             z-index: 999;
@@ -63,8 +53,8 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-size: 26px;
+            gap: 10px;
+            font-size: 24px;
             font-weight: 900;
             background: linear-gradient(135deg, #6c5ce7, #a29bfe);
             -webkit-background-clip: text;
@@ -72,15 +62,15 @@
         }
 
         .logo i {
-            font-size: 32px;
+            font-size: 30px;
             -webkit-text-fill-color: #6c5ce7;
         }
 
         .nav-links {
             display: flex;
-            gap: 28px;
+            gap: 24px;
             font-weight: 600;
-            font-size: 15px;
+            font-size: 14px;
             flex-wrap: wrap;
         }
 
@@ -90,135 +80,153 @@
             border-bottom: 2px solid transparent;
         }
 
-        .nav-links a:hover {
+        .nav-links a:hover,
+        .nav-links .active {
             color: #a29bfe;
             border-bottom-color: #6c5ce7;
         }
 
-        .nav-links .active {
-            color: #6c5ce7;
-            border-bottom-color: #6c5ce7;
-        }
-
-        .auth-buttons {
+        .user-info {
             display: flex;
-            gap: 12px;
+            align-items: center;
+            gap: 14px;
         }
 
-        .auth-buttons .btn {
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 14px;
-            border: none;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .btn-login {
-            background: transparent;
-            color: #e4e6f0;
-            border: 1.5px solid #6c5ce7 !important;
-        }
-
-        .btn-login:hover {
+        .user-info .avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
             background: #6c5ce7;
-            color: #fff;
-        }
-
-        .btn-register {
-            background: #6c5ce7;
-            color: #fff;
-        }
-
-        .btn-register:hover {
-            background: #5a4bd1;
-            transform: scale(1.04);
-        }
-
-        /* ===== HERO SECTION ===== */
-        .hero {
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            padding: 70px 20px 50px;
-            background: radial-gradient(circle at 30% 20%, #1a1f35, #0b0e1a 80%);
-            border-bottom: 1px solid rgba(108, 92, 231, 0.15);
-        }
-
-        .hero h1 {
-            font-size: 58px;
-            font-weight: 900;
-            background: linear-gradient(135deg, #ffffff, #a29bfe);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1.2;
-            max-width: 800px;
-        }
-
-        .hero h1 span {
-            background: linear-gradient(135deg, #fd79a8, #6c5ce7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: 19px;
-            color: #b0b8d0;
-            max-width: 620px;
-            margin: 20px 0 32px;
-            line-height: 1.8;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .hero-buttons .btn {
-            padding: 14px 40px;
-            border-radius: 40px;
             font-weight: 700;
             font-size: 16px;
+        }
+
+        .user-info .role-badge {
+            font-size: 11px;
+            padding: 2px 12px;
+            border-radius: 20px;
+            background: #6c5ce7;
+            color: #fff;
+        }
+
+        .user-info .role-badge.owner {
+            background: #f1c40f;
+            color: #000;
+        }
+
+        .user-info .role-badge.admin {
+            background: #3498db;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 30px;
             border: none;
+            font-weight: 700;
             cursor: pointer;
             transition: 0.3s;
+            font-family: inherit;
+            font-size: 14px;
         }
 
         .btn-primary {
             background: #6c5ce7;
             color: #fff;
-            box-shadow: 0 6px 30px rgba(108, 92, 231, 0.35);
         }
 
         .btn-primary:hover {
             background: #5a4bd1;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 40px rgba(108, 92, 231, 0.5);
+            transform: scale(1.05);
         }
 
-        .btn-secondary {
+        .btn-outline {
             background: transparent;
             color: #e4e6f0;
             border: 1.5px solid #6c5ce7;
         }
 
-        .btn-secondary:hover {
+        .btn-outline:hover {
             background: rgba(108, 92, 231, 0.15);
+        }
+
+        .btn-logout {
+            background: transparent;
+            color: #e74c3c;
+            border: 1px solid #e74c3c;
+        }
+
+        .btn-logout:hover {
+            background: #e74c3c;
+            color: #fff;
+        }
+
+        .btn-danger {
+            background: #e74c3c;
+            color: #fff;
+        }
+
+        .btn-danger:hover {
+            background: #c0392b;
+        }
+
+        .btn-success {
+            background: #2ecc71;
+            color: #fff;
+        }
+
+        .btn-success:hover {
+            background: #27ae60;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: radial-gradient(circle at 30% 20%, #1a1f35, #0a0d1a 80%);
+            border-bottom: 1px solid rgba(108, 92, 231, 0.15);
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #fff, #a29bfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #f1c40f, #6c5ce7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: #8892b0;
+            font-size: 18px;
+            margin: 16px 0 24px;
+        }
+
+        .hero .tagline {
+            display: inline-block;
+            background: rgba(108, 92, 231, 0.2);
+            padding: 6px 24px;
+            border-radius: 30px;
+            border: 1px solid rgba(108, 92, 231, 0.3);
+            font-size: 14px;
+            color: #a29bfe;
         }
 
         /* ===== STATS ===== */
         .stats {
             display: flex;
             justify-content: center;
-            gap: 60px;
-            padding: 40px 20px;
+            gap: 50px;
+            padding: 30px 20px;
             flex-wrap: wrap;
-            background: rgba(20, 26, 43, 0.5);
+            background: rgba(20, 26, 43, 0.4);
             border-bottom: 1px solid rgba(108, 92, 231, 0.08);
         }
 
@@ -227,26 +235,25 @@
         }
 
         .stat-item .number {
-            font-size: 36px;
+            font-size: 32px;
             font-weight: 900;
             color: #a29bfe;
         }
 
         .stat-item .label {
-            font-size: 14px;
+            font-size: 13px;
             color: #8892b0;
-            margin-top: 4px;
         }
 
-        /* ===== GAME CARDS SECTION ===== */
+        /* ===== SECTION ===== */
         .section {
-            padding: 60px 40px;
+            padding: 50px 40px;
         }
 
         .section-title {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 800;
-            margin-bottom: 30px;
+            margin-bottom: 28px;
             display: flex;
             align-items: center;
             gap: 12px;
@@ -254,122 +261,428 @@
 
         .section-title i {
             color: #6c5ce7;
-            font-size: 28px;
         }
 
-        .game-grid {
+        /* ===== TEAM GRID ===== */
+        .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 28px;
-        }
-
-        .game-card {
-            background: rgba(20, 26, 43, 0.7);
-            border-radius: 20px;
-            padding: 24px 18px 20px;
-            text-align: center;
-            border: 1px solid rgba(108, 92, 231, 0.15);
-            transition: 0.35s;
-            backdrop-filter: blur(4px);
-        }
-
-        .game-card:hover {
-            transform: translateY(-8px);
-            border-color: #6c5ce7;
-            box-shadow: 0 12px 40px rgba(108, 92, 231, 0.2);
-        }
-
-        .game-card .icon {
-            font-size: 52px;
-            color: #6c5ce7;
-            margin-bottom: 12px;
-        }
-
-        .game-card h3 {
-            font-size: 20px;
-            margin-bottom: 6px;
-        }
-
-        .game-card p {
-            font-size: 14px;
-            color: #8892b0;
-            line-height: 1.6;
-        }
-
-        .game-card .badge {
-            display: inline-block;
-            margin-top: 12px;
-            background: #6c5ce7;
-            padding: 4px 16px;
-            border-radius: 30px;
-            font-size: 12px;
-            font-weight: 700;
-        }
-
-        /* ===== MINECRAFT / ROBLOX ===== */
-        .platform-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 24px;
-            margin-top: 10px;
         }
 
-        .platform-card {
-            background: rgba(20, 26, 43, 0.6);
+        .team-card {
+            background: rgba(20, 26, 43, 0.7);
             border-radius: 18px;
-            padding: 28px 18px;
+            padding: 24px 16px;
             text-align: center;
             border: 1px solid rgba(108, 92, 231, 0.12);
             transition: 0.3s;
         }
 
-        .platform-card:hover {
+        .team-card:hover {
             border-color: #6c5ce7;
-            background: rgba(108, 92, 231, 0.08);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(108, 92, 231, 0.15);
         }
 
-        .platform-card i {
-            font-size: 44px;
+        .team-card .avatar-big {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin: 0 auto 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 900;
+            border: 3px solid #6c5ce7;
+        }
+
+        .team-card .avatar-big.owner {
+            border-color: #f1c40f;
+            background: rgba(241, 196, 15, 0.15);
+        }
+
+        .team-card .avatar-big.admin {
+            border-color: #3498db;
+            background: rgba(52, 152, 219, 0.15);
+        }
+
+        .team-card .avatar-big.member {
+            border-color: #6c5ce7;
+            background: rgba(108, 92, 231, 0.1);
+        }
+
+        .team-card h4 {
+            font-size: 18px;
+        }
+
+        .team-card .role-tag {
+            font-size: 12px;
+            padding: 2px 14px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 6px;
+        }
+
+        .team-card .role-tag.owner {
+            background: #f1c40f;
+            color: #000;
+        }
+
+        .team-card .role-tag.admin {
+            background: #3498db;
+            color: #fff;
+        }
+
+        .team-card .role-tag.member {
+            background: #6c5ce7;
+            color: #fff;
+        }
+
+        .team-card .status {
+            font-size: 12px;
+            color: #2ecc71;
+            margin-top: 8px;
+        }
+
+        .team-card .status i {
+            font-size: 10px;
+        }
+
+        /* ===== VIDEO SECTION ===== */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .video-card {
+            background: rgba(20, 26, 43, 0.7);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(108, 92, 231, 0.1);
+            transition: 0.3s;
+        }
+
+        .video-card:hover {
+            border-color: #6c5ce7;
+        }
+
+        .video-card .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            background: #000;
+        }
+
+        .video-card .video-wrapper video,
+        .video-card .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-card .video-info {
+            padding: 14px 16px;
+        }
+
+        .video-card .video-info h4 {
+            font-size: 15px;
+        }
+
+        .video-card .video-info .meta {
+            display: flex;
+            justify-content: space-between;
+            color: #8892b0;
+            font-size: 13px;
+            margin-top: 6px;
+        }
+
+        /* ===== CHAT ===== */
+        .chat-container {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .chat-box {
+            flex: 2;
+            min-width: 300px;
+            background: rgba(20, 26, 43, 0.6);
+            border-radius: 18px;
+            border: 1px solid rgba(108, 92, 231, 0.1);
+            display: flex;
+            flex-direction: column;
+            height: 400px;
+        }
+
+        .chat-box .chat-header {
+            padding: 14px 20px;
+            border-bottom: 1px solid rgba(108, 92, 231, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-box .chat-header .online-count {
+            color: #2ecc71;
+            font-size: 13px;
+        }
+
+        .chat-box .chat-messages {
+            flex: 1;
+            padding: 16px 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .chat-box .chat-messages .msg {
+            padding: 8px 14px;
+            border-radius: 14px;
+            max-width: 80%;
+            word-wrap: break-word;
+            animation: fadeIn 0.3s;
+        }
+
+        .chat-box .chat-messages .msg.me {
+            background: #6c5ce7;
+            align-self: flex-end;
+            border-bottom-left-radius: 4px;
+        }
+
+        .chat-box .chat-messages .msg.other {
+            background: rgba(255, 255, 255, 0.06);
+            align-self: flex-start;
+            border-bottom-right-radius: 4px;
+        }
+
+        .chat-box .chat-messages .msg .msg-user {
+            font-size: 11px;
+            font-weight: 700;
             color: #a29bfe;
-            margin-bottom: 10px;
+        }
+
+        .chat-box .chat-messages .msg .msg-text {
+            font-size: 14px;
+        }
+
+        .chat-box .chat-messages .msg .msg-time {
+            font-size: 10px;
+            color: #8892b0;
+            margin-top: 2px;
+            text-align: left;
+        }
+
+        .chat-box .chat-input {
+            padding: 12px 16px;
+            border-top: 1px solid rgba(108, 92, 231, 0.1);
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-box .chat-input input {
+            flex: 1;
+            padding: 10px 16px;
+            border-radius: 30px;
+            border: 1px solid rgba(108, 92, 231, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+            color: #e4e6f0;
+            outline: none;
+            font-family: inherit;
+        }
+
+        .chat-box .chat-input input::placeholder {
+            color: #8892b0;
+        }
+
+        .chat-box .chat-input button {
+            padding: 10px 20px;
+            border-radius: 30px;
+            border: none;
+            background: #6c5ce7;
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .chat-box .chat-input button:hover {
+            background: #5a4bd1;
+        }
+
+        .online-list {
+            flex: 1;
+            min-width: 180px;
+            background: rgba(20, 26, 43, 0.6);
+            border-radius: 18px;
+            border: 1px solid rgba(108, 92, 231, 0.1);
+            padding: 16px 20px;
+        }
+
+        .online-list h4 {
+            font-size: 15px;
+            margin-bottom: 12px;
+            color: #a29bfe;
+        }
+
+        .online-list .online-user {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 6px 0;
+            font-size: 14px;
+        }
+
+        .online-list .online-user i {
+            color: #2ecc71;
+            font-size: 10px;
+        }
+
+        .online-list .online-user .role-badge-small {
+            font-size: 10px;
+            padding: 1px 10px;
+            border-radius: 20px;
+            background: #6c5ce7;
+        }
+
+        .online-list .online-user .role-badge-small.owner {
+            background: #f1c40f;
+            color: #000;
+        }
+
+        .online-list .online-user .role-badge-small.admin {
+            background: #3498db;
+        }
+
+        /* ===== MODAL ===== */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: #1a1f35;
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 420px;
+            width: 90%;
+            border: 1px solid rgba(108, 92, 231, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+        }
+
+        .modal h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .modal input {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 12px;
+            border: 1px solid rgba(108, 92, 231, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+            color: #e4e6f0;
+            outline: none;
+            font-family: inherit;
+            margin-bottom: 12px;
+            font-size: 15px;
+        }
+
+        .modal input::placeholder {
+            color: #8892b0;
+        }
+
+        .modal .modal-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .modal .modal-buttons button {
+            flex: 1;
+            padding: 12px;
+            border-radius: 12px;
+            border: none;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            font-family: inherit;
+        }
+
+        .modal .error-msg {
+            color: #e74c3c;
+            font-size: 13px;
+            text-align: center;
+            margin-top: 8px;
         }
 
         /* ===== FOOTER ===== */
         footer {
-            border-top: 1px solid rgba(108, 92, 231, 0.12);
-            padding: 40px 40px 24px;
+            border-top: 1px solid rgba(108, 92, 231, 0.1);
+            padding: 30px 40px 20px;
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            gap: 20px;
-            background: rgba(11, 14, 26, 0.8);
+            gap: 16px;
+            background: rgba(10, 13, 26, 0.8);
         }
 
         footer .copy {
-            font-size: 14px;
             color: #8892b0;
+            font-size: 13px;
         }
 
         footer .socials {
             display: flex;
-            gap: 18px;
-            font-size: 20px;
+            gap: 16px;
+            font-size: 18px;
         }
 
         footer .socials a {
-            transition: 0.3s;
             color: #8892b0;
+            transition: 0.3s;
         }
 
         footer .socials a:hover {
             color: #a29bfe;
-            transform: translateY(-3px);
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             header {
-                padding: 14px 20px;
+                padding: 12px 20px;
                 flex-direction: column;
                 align-items: stretch;
                 text-align: center;
@@ -377,34 +690,42 @@
 
             .nav-links {
                 justify-content: center;
-                gap: 16px;
-                font-size: 14px;
+                gap: 14px;
+                font-size: 13px;
             }
 
-            .auth-buttons {
+            .user-info {
                 justify-content: center;
             }
 
             .hero h1 {
-                font-size: 34px;
-            }
-
-            .hero p {
-                font-size: 16px;
+                font-size: 32px;
             }
 
             .section {
-                padding: 40px 18px;
+                padding: 30px 16px;
             }
 
             .stats {
-                gap: 30px;
+                gap: 24px;
+            }
+
+            .chat-container {
+                flex-direction: column;
+            }
+
+            .chat-box {
+                height: 320px;
+                min-width: unset;
+            }
+
+            .online-list {
+                min-width: unset;
             }
 
             footer {
                 flex-direction: column;
                 text-align: center;
-                justify-content: center;
             }
 
             .footer .socials {
@@ -414,157 +735,149 @@
 
         @media (max-width: 480px) {
             .hero h1 {
-                font-size: 26px;
+                font-size: 24px;
             }
 
-            .hero-buttons .btn {
-                padding: 12px 24px;
-                font-size: 14px;
-            }
-
-            .game-grid {
+            .team-grid {
                 grid-template-columns: 1fr 1fr;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal {
+                padding: 24px;
             }
         }
     </style>
 </head>
-
 <body>
 
-    <!-- ========== HEADER ========== -->
+    <!-- ===== HEADER ===== -->
     <header>
         <div class="logo">
-            <i class="fas fa-gamepad"></i>
-            GM Kids Gaming
+            <i class="fas fa-crown"></i>
+            GM Kids
         </div>
-
         <div class="nav-links">
             <a href="#" class="active">خانه</a>
-            <a href="#">بازی‌ها</a>
-            <a href="#">Minecraft</a>
-            <a href="#">Roblox</a>
-            <a href="#">درباره ما</a>
+            <a href="#team">اعضا</a>
+            <a href="#videos">ویدیوها</a>
+            <a href="#chat">چت</a>
         </div>
-
-        <div class="auth-buttons">
-            <button class="btn btn-login">ورود</button>
-            <button class="btn btn-register">ثبت‌نام</button>
+        <div class="user-info" id="userInfo">
+            <div id="authButtons">
+                <button class="btn btn-primary" onclick="openModal('login')">
+                    <i class="fas fa-sign-in-alt"></i> ورود
+                </button>
+                <button class="btn btn-outline" onclick="openModal('register')">
+                    <i class="fas fa-user-plus"></i> ثبت‌نام
+                </button>
+            </div>
+            <div id="userPanel" style="display:none; align-items:center; gap:12px;">
+                <div class="avatar" id="userAvatar">ب</div>
+                <span id="userNameDisplay">باراد</span>
+                <span class="role-badge" id="userRoleBadge">Owner</span>
+                <button class="btn btn-logout" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- ========== HERO ========== -->
+    <!-- ===== HERO ===== -->
     <section class="hero">
+        <div class="tagline">
+            <i class="fas fa-shield-alt"></i> تیم رسمی GM Kids
+        </div>
         <h1>
-            خوش آمدی به <br />
-            <span>GM Kids Gaming</span> 🎮
+            به خانواده <span>GM Kids</span> خوش اومدی
         </h1>
         <p>
-            تیم گیمینگ ما پر از انرژی، هیجان و بازی‌های حرفه‌ای است.
-            اینجا روال عادی نیست؛ اینجا جای قهرمان‌هاست.
+            ما ۶ نفریم، اما یه تیم واقعی هستیم! 🎮
         </p>
-        <div class="hero-buttons">
-            <button class="btn btn-primary">
-                <i class="fas fa-rocket"></i> شروع کن
-            </button>
-            <button class="btn btn-secondary">
-                <i class="fas fa-play-circle"></i> مشاهده بازی‌ها
-            </button>
-        </div>
+        <p style="font-size:14px; color:#6c5ce7;">
+            باراد (Owner) • امیر و اهورا (Admin) • احسان، یاسین، ماهان (Member)
+        </p>
     </section>
 
-    <!-- ========== STATS ========== -->
+    <!-- ===== STATS ===== -->
     <div class="stats">
         <div class="stat-item">
-            <div class="number">۱۲۰+</div>
-            <div class="label">بازیکن فعال</div>
+            <div class="number">۶</div>
+            <div class="label">اعضای تیم</div>
         </div>
         <div class="stat-item">
-            <div class="number">۱۸</div>
-            <div class="label">بازی رسمی</div>
+            <div class="number">۱</div>
+            <div class="label">Owner</div>
         </div>
         <div class="stat-item">
-            <div class="number">۴</div>
-            <div class="label">سرور آنلاین</div>
+            <div class="number">۲</div>
+            <div class="label">Admin</div>
         </div>
         <div class="stat-item">
-            <div class="number">۹۸٪</div>
-            <div class="label">رضایت کاربران</div>
+            <div class="number">۳</div>
+            <div class="label">Member</div>
         </div>
     </div>
 
-    <!-- ========== GAME CARDS ========== -->
-    <section class="section">
+    <!-- ===== TEAM SECTION ===== -->
+    <section class="section" id="team">
         <div class="section-title">
-            <i class="fas fa-gamepad"></i>
-            بازی‌های محبوب
+            <i class="fas fa-users"></i>
+            اعضای تیم GM Kids
         </div>
-        <div class="game-grid">
-            <div class="game-card">
-                <div class="icon"><i class="fas fa-crown"></i></div>
-                <h3>Battle Royale</h3>
-                <p>مسابقه ۱۰۰ نفره در جزیره مرموز</p>
-                <span class="badge">آنلاین</span>
+        <div class="team-grid" id="teamGrid">
+            <!-- توسط JS پر میشه -->
+        </div>
+    </section>
+
+    <!-- ===== VIDEOS SECTION ===== -->
+    <section class="section" id="videos">
+        <div class="section-title">
+            <i class="fas fa-video"></i>
+            ویدیوهای تیم
+        </div>
+        <div class="video-grid" id="videoGrid">
+            <!-- توسط JS پر میشه -->
+        </div>
+    </section>
+
+    <!-- ===== CHAT SECTION ===== -->
+    <section class="section" id="chat">
+        <div class="section-title">
+            <i class="fas fa-comments"></i>
+            چت گروهی
+        </div>
+        <div class="chat-container">
+            <div class="chat-box">
+                <div class="chat-header">
+                    <span><i class="fas fa-circle" style="color:#2ecc71; font-size:12px;"></i> چت زنده</span>
+                    <span class="online-count"><i class="fas fa-user"></i> <span id="onlineCount">۶</span> آنلاین</span>
+                </div>
+                <div class="chat-messages" id="chatMessages">
+                    <!-- توسط JS پر میشه -->
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="chatInput" placeholder="پیامت رو بفرست داداش..." onkeydown="if(event.key==='Enter') sendMessage()" />
+                    <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+                </div>
             </div>
-            <div class="game-card">
-                <div class="icon"><i class="fas fa-car"></i></div>
-                <h3>Speed Racer</h3>
-                <p>مسابقه سرعت با ماشین‌های فوق‌العاده</p>
-                <span class="badge">جدید</span>
-            </div>
-            <div class="game-card">
-                <div class="icon"><i class="fas fa-chess-queen"></i></div>
-                <h3>Chess Master</h3>
-                <p>شطرنج حرفه‌ای با هوش مصنوعی</p>
-                <span class="badge">پیشنهادی</span>
-            </div>
-            <div class="game-card">
-                <div class="icon"><i class="fas fa-futbol"></i></div>
-                <h3>Football Stars</h3>
-                <p>فوتبال خیابانی با تیم‌های افسانه‌ای</p>
-                <span class="badge">محبوب</span>
+            <div class="online-list">
+                <h4><i class="fas fa-circle" style="color:#2ecc71; font-size:10px;"></i> آنلاین‌ها</h4>
+                <div id="onlineList">
+                    <!-- توسط JS پر میشه -->
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ========== MINECRAFT & ROBLOX ========== -->
-    <section class="section" style="padding-top: 0;">
-        <div class="section-title">
-            <i class="fas fa-cubes"></i>
-            پلتفرم‌های ویژه
-        </div>
-        <div class="platform-grid">
-            <div class="platform-card">
-                <i class="fas fa-pickaxe"></i>
-                <h4>Minecraft</h4>
-                <p style="color:#8892b0; font-size:14px;">
-                    سرور اختصاصی با مودهای جدید
-                </p>
-                <span style="color:#6c5ce7; font-weight:700;">۲۴/۷ آنلاین</span>
-            </div>
-            <div class="platform-card">
-                <i class="fas fa-robot"></i>
-                <h4>Roblox</h4>
-                <p style="color:#8892b0; font-size:14px;">
-                    مینی‌گیم‌های اختصاصی
-                </p>
-                <span style="color:#6c5ce7; font-weight:700;">همیشه به‌روز</span>
-            </div>
-            <div class="platform-card">
-                <i class="fas fa-trophy"></i>
-                <h4>مسابقات</h4>
-                <p style="color:#8892b0; font-size:14px;">
-                    جوایز هفتگی و ماهانه
-                </p>
-                <span style="color:#6c5ce7; font-weight:700;">ثبت‌نام آزاد</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== FOOTER ========== -->
+    <!-- ===== FOOTER ===== -->
     <footer>
         <div class="copy">
-            <i class="fas fa-crown" style="color:#6c5ce7;"></i>
-            GM Kids Gaming &copy; ۲۰۲۶ – تمامی حقوق محفوظ است.
+            <i class="fas fa-crown" style="color:#f1c40f;"></i>
+            GM Kids Gaming &copy; ۲۰۲۶ – تیم ما، افتخار ما
         </div>
         <div class="socials">
             <a href="#"><i class="fab fa-telegram"></i></a>
@@ -574,5 +887,241 @@
         </div>
     </footer>
 
-</body>
-</html>
+    <!-- ===== MODAL ===== -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <h2 id="modalTitle">ورود به حساب</h2>
+            <input type="text" id="modalName" placeholder="نام کاربری" />
+            <input type="text" id="modalCode" placeholder="کد (فقط برای ادمین/اونر)" />
+            <div class="modal-buttons">
+                <button class="btn btn-primary" id="modalActionBtn" style="flex:1;">ورود</button>
+                <button class="btn btn-outline" onclick="closeModal()" style="flex:0.5;">لغو</button>
+            </div>
+            <div class="error-msg" id="modalError"></div>
+            <p style="text-align:center; margin-top:12px; font-size:13px; color:#8892b0;">
+                <span id="modalSwitchText">عضو نیستی؟</span>
+                <a href="#" id="modalSwitchLink" style="color:#6c5ce7;">ثبت‌نام کن</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // ============================================================
+        // ===== CONFIG =====
+        // ============================================================
+
+        const TEAM = {
+            owner: ['باراد'],
+            admins: ['امیر', 'اهورا'],
+            members: ['احسان', 'یاسین', 'ماهان']
+        };
+
+        const CODES = {
+            owner: 'GM2026',
+            admin: 'GMADMIN'
+        };
+
+        // ============================================================
+        // ===== STATE =====
+        // ============================================================
+
+        let currentUser = null;
+        let currentRole = null;
+        let messages = [];
+        let modalMode = 'login'; // 'login' | 'register'
+
+        // ============================================================
+        // ===== TEAM DATA =====
+        // ============================================================
+
+        const teamMembers = [
+            { name: 'باراد', role: 'owner', emoji: '👑', status: 'آنلاین' },
+            { name: 'امیر', role: 'admin', emoji: '🛡️', status: 'آنلاین' },
+            { name: 'اهورا', role: 'admin', emoji: '⚡', status: 'آنلاین' },
+            { name: 'احسان', role: 'member', emoji: '🎯', status: 'آنلاین' },
+            { name: 'یاسین', role: 'member', emoji: '🔥', status: 'آنلاین' },
+            { name: 'ماهان', role: 'member', emoji: '💪', status: 'آنلاین' }
+        ];
+
+        // ============================================================
+        // ===== SAMPLE VIDEOS =====
+        // ============================================================
+
+        const sampleVideos = [{
+            id: 1,
+            title: '🎮 کلیپ گیمینگ GM Kids - قسمت اول',
+            uploader: 'باراد',
+            url: 'https://www.w3schools.com/html/mov_bbb.mp4',
+            type: 'video'
+        }, {
+            id: 2,
+            title: '⚽ گل زیبا در فیفا - امیر',
+            uploader: 'امیر',
+            url: 'https://www.w3schools.com/html/mov_bbb.mp4',
+            type: 'video'
+        }, {
+            id: 3,
+            title: '🎬 تریلر بازی جدید - اهورا',
+            uploader: 'اهورا',
+            url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+            type: 'youtube'
+        }];
+
+        // ============================================================
+        // ===== SAMPLE MESSAGES =====
+        // ============================================================
+
+        const sampleMessages = [
+            { user: '🎮 سیستم', text: 'به چت GM Kids خوش اومدی داداش! 🚀', time: 'همین الان' },
+            { user: 'باراد', text: 'سلام به همه! تیم ما بهترینه 💪', time: '۱ دقیقه پیش' },
+            { user: 'امیر', text: 'داداش‌ها امشب بازی می‌زنیم؟', time: '۳۰ ثانیه پیش' },
+            { user: 'اهورا', text: 'آره حتما! من آمادم 🔥', time: 'همین الان' },
+        ];
+
+        // ============================================================
+        // ===== INIT =====
+        // ============================================================
+
+        function init() {
+            renderTeam();
+            renderVideos();
+            renderChat();
+
+            // چک کردن کاربر ذخیره شده
+            const saved = localStorage.getItem('gmUser');
+            if (saved) {
+                try {
+                    const data = JSON.parse(saved);
+                    currentUser = data.name;
+                    currentRole = data.role;
+                    updateUIForUser();
+                } catch (e) {
+                    localStorage.removeItem('gmUser');
+                }
+            }
+
+            // ذخیره پیام‌ها در localStorage
+            const savedMessages = localStorage.getItem('gmMessages');
+            if (savedMessages) {
+                try {
+                    messages = JSON.parse(savedMessages);
+                    renderChat();
+                } catch (e) {}
+            } else {
+                messages = [...sampleMessages];
+                saveMessages();
+            }
+
+            updateOnlineList();
+        }
+
+        // ============================================================
+        // ===== RENDER TEAM =====
+        // ============================================================
+
+        function renderTeam() {
+            const grid = document.getElementById('teamGrid');
+
+            grid.innerHTML = teamMembers.map(m => `
+                <div class="team-card">
+                    <div class="avatar-big ${m.role}">
+                        ${m.emoji}
+                    </div>
+                    <h4>${m.name}</h4>
+                    <span class="role-tag ${m.role}">
+                        ${m.role === 'owner' ? '👑 Owner' : m.role === 'admin' ? '🛡️ Admin' : '⭐ Member'}
+                    </span>
+                    <div class="status"><i class="fas fa-circle"></i> ${m.status}</div>
+                </div>
+            `).join('');
+        }
+
+        // ============================================================
+        // ===== RENDER VIDEOS =====
+        // ============================================================
+
+        function renderVideos() {
+            const grid = document.getElementById('videoGrid');
+
+            if (sampleVideos.length === 0) {
+                grid.innerHTML = `
+                    <div style="text-align:center; padding:40px; color:#8892b0; grid-column:1/-1;">
+                        <i class="fas fa-video" style="font-size:40px; color:#6c5ce7;"></i>
+                        <p style="margin-top:10px;">هنوز ویدیویی آپلود نشده داداش!</p>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = sampleVideos.map(v => `
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        ${v.type === 'youtube'
+                            ? `<iframe src="${v.url}" allowfullscreen></iframe>`
+                            : `<video controls><source src="${v.url}" type="video/mp4"></video>`
+                        }
+                    </div>
+                    <div class="video-info">
+                        <h4>${v.title}</h4>
+                        <div class="meta">
+                            <span>👤 ${v.uploader}</span>
+                            <span><i class="fas fa-eye"></i> ${Math.floor(Math.random() * 50) + 10} بازدید</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // ============================================================
+        // ===== CHAT =====
+        // ============================================================
+
+        function renderChat() {
+            const container = document.getElementById('chatMessages');
+
+            if (messages.length === 0) {
+                container.innerHTML = `
+                    <div style="text-align:center; color:#8892b0; padding:20px;">
+                        هنوز پیامی نیست داداش! اولین پیام رو تو بفرست 🎮
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = messages.map(msg => {
+                const isMe = msg.user === currentUser;
+                return `
+                    <div class="msg ${isMe ? 'me' : 'other'}">
+                        <div class="msg-user">${msg.user}</div>
+                        <div class="msg-text">${msg.text}</div>
+                        <div class="msg-time">${msg.time}</div>
+                    </div>
+                `;
+            }).join('');
+
+            container.scrollTop = container.scrollHeight;
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const text = input.value.trim();
+
+            if (!text) {
+                alert('داداش یه چیزی بنویس!');
+                return;
+            }
+
+            if (!currentUser) {
+                alert('داداش اول وارد شو که معلوم باشه کی هستی!');
+                return;
+            }
+
+            const time = new Date().toLocaleTimeString('fa-IR', { hour: '2-digit', minute: '2-digit' });
+            messages.push({ user: currentUser, text, time });
+            saveMessages();
+            renderChat();
+            input.value = '';
+        }
+
+        function saveMessages() {
+           
