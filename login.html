@@ -1,1 +1,417 @@
 
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login | Gamer Kids</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    font-family:Tahoma,Arial,sans-serif;
+    background:
+        radial-gradient(circle at 80% 10%,rgba(0,170,255,.16),transparent 30%),
+        radial-gradient(circle at 10% 90%,rgba(120,60,255,.13),transparent 30%),
+        #050811;
+    color:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:25px;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+.container{
+    width:100%;
+    max-width:450px;
+}
+
+.logo{
+    text-align:center;
+    font-size:30px;
+    font-weight:900;
+    margin-bottom:30px;
+}
+
+.logo span{
+    color:#3ddcff;
+}
+
+.card{
+    padding:35px;
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(18,29,49,.96),
+            rgba(7,12,22,.98)
+        );
+
+    border:1px solid rgba(255,255,255,.09);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.5);
+}
+
+h1{
+    text-align:center;
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#8996aa;
+    font-size:13px;
+    margin-bottom:30px;
+}
+
+.form-group{
+    margin-bottom:18px;
+}
+
+label{
+    display:block;
+    color:#cbd5e5;
+    font-size:13px;
+    margin-bottom:8px;
+}
+
+input{
+    width:100%;
+    padding:14px 15px;
+
+    border-radius:12px;
+
+    border:1px solid rgba(255,255,255,.1);
+
+    background:rgba(255,255,255,.045);
+
+    color:white;
+
+    outline:none;
+
+    font-family:inherit;
+
+    transition:.2s;
+}
+
+input:focus{
+    border-color:#3ddcff;
+    box-shadow:0 0 0 3px rgba(61,220,255,.08);
+}
+
+input::placeholder{
+    color:#667389;
+}
+
+.password-box{
+    position:relative;
+}
+
+.password-box input{
+    padding-left:60px;
+}
+
+.show-password{
+    position:absolute;
+    left:10px;
+    top:50%;
+    transform:translateY(-50%);
+
+    border:0;
+    background:transparent;
+
+    color:#8290a7;
+
+    cursor:pointer;
+    font-size:16px;
+}
+
+.login-btn{
+    width:100%;
+
+    padding:14px;
+
+    border:0;
+
+    border-radius:13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #477fff,
+            #7657ff
+        );
+
+    color:white;
+
+    font-family:inherit;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    margin-top:8px;
+}
+
+.login-btn:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(70,100,255,.25);
+}
+
+.message{
+    display:none;
+
+    padding:11px;
+
+    border-radius:10px;
+
+    margin-bottom:15px;
+
+    text-align:center;
+
+    font-size:12px;
+}
+
+.error{
+    display:block;
+
+    background:rgba(255,70,70,.1);
+
+    border:1px solid rgba(255,70,70,.25);
+
+    color:#ff9292;
+}
+
+.success{
+    display:block;
+
+    background:rgba(70,255,150,.1);
+
+    border:1px solid rgba(70,255,150,.25);
+
+    color:#78ffb0;
+}
+
+.signup{
+    text-align:center;
+
+    margin-top:24px;
+
+    color:#8996aa;
+
+    font-size:13px;
+}
+
+.signup a{
+    color:#3ddcff;
+    font-weight:bold;
+}
+
+.back{
+    display:block;
+
+    text-align:center;
+
+    margin-top:22px;
+
+    color:#7e8ba0;
+
+    font-size:12px;
+}
+
+.back:hover{
+    color:white;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="logo">
+        GAMER <span>KIDS</span>
+    </div>
+
+    <div class="card">
+
+        <h1>
+            خوش برگشتی 🎮
+        </h1>
+
+        <div class="subtitle">
+            وارد حساب Gamer Kids شو
+        </div>
+
+        <div id="message" class="message"></div>
+
+        <form id="loginForm">
+
+            <div class="form-group">
+
+                <label>
+                    Username یا Email
+                </label>
+
+                <input
+                    type="text"
+                    id="login"
+                    placeholder="Username یا Email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Password
+                </label>
+
+                <div class="password-box">
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="رمز عبور"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="show-password"
+                        id="showPassword"
+                    >
+                        👁
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="login-btn"
+            >
+                🔐 LOGIN
+            </button>
+
+        </form>
+
+
+        <div class="signup">
+
+            حساب نداری؟
+
+            <a href="signup.html">
+                Sign Up
+            </a>
+
+        </div>
+
+
+        <a href="index.html" class="back">
+            ← بازگشت به Gamer Kids
+        </a>
+
+    </div>
+
+</div>
+
+
+<script>
+
+const form = document.getElementById("loginForm");
+
+const message = document.getElementById("message");
+
+const showPassword =
+    document.getElementById("showPassword");
+
+const password =
+    document.getElementById("password");
+
+
+showPassword.addEventListener("click", function(){
+
+    if(password.type === "password"){
+
+        password.type = "text";
+
+        this.textContent = "🙈";
+
+    }else{
+
+        password.type = "password";
+
+        this.textContent = "👁";
+
+    }
+
+});
+
+
+form.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const login =
+        document.getElementById("login").value.trim();
+
+    const pass =
+        password.value;
+
+    message.className = "message";
+
+    if(!login || !pass){
+
+        message.textContent =
+            "لطفاً همه فیلدها را پر کن.";
+
+        message.classList.add("error");
+
+        return;
+    }
+
+    /*
+      فعلاً سیستم احراز هویت واقعی وصل نشده.
+      این قسمت در مرحله بعد به Backend/Auth وصل می‌شود.
+    */
+
+    message.textContent =
+        "سیستم Login هنوز به دیتابیس متصل نشده است.";
+
+    message.classList.add("error");
+
+});
+
+</script>
+
+</body>
+</html>
