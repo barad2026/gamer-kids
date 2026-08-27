@@ -974,4 +974,184 @@
             document.getElementById('modalCode').value = '';
 
             if (mode === 'login') {
-                title.textContent = '🔑 ور
+                title.textContent = '🔑 ورود به حساب';
+                btn.textContent = 'ورود';
+                switchText.textContent = 'عضو نیستی؟';
+                switchLink.textContent = 'ثبت‌نام کن';
+                codeInput.placeholder = 'کد (فقط برای ادمین/اونر)';
+            } else {
+                title.textContent = '📝 ثبت‌نام جدید';
+                btn.textContent = 'ثبت‌نام';
+                switchText.textContent = 'حساب داری؟';
+                switchLink.textContent = 'وارد شو';
+                codeInput.placeholder = 'کد ادمین/اونر (اختیاری)';
+            }
+
+            overlay.classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.remove('active');
+            document.getElementById('modalError').textContent = '';
+        }
+
+        function switchModalMode() {
+            closeModal();
+            setTimeout(() => {
+                openModal(modalMode === 'login' ? 'register' : 'login');
+            }, 300);
+        }
+
+        function handleModalAction() {
+            const name = document.getElementById('modalName').value.trim();
+            const code = document.getElementById('modalCode').value.trim();
+            const error = document.getElementById('modalError');
+
+            if (!name) {
+                error.textContent = 'داداش اسمت رو بنویس!';
+                return;
+            }
+
+            const existingMember = allMembers.find(m => m.name === name);
+
+            // ===== REGISTER =====
+            if (modalMode === 'register') {
+                if (existingMember) {
+                    error.textContent = 'این اسم قبلاً ثبت شده داداش!';
+                    return;
+                }
+
+                let role = 'member';
+                if (code === CODES.owner) {
+                    role = 'owner';
+                } else if (code === CODES.admin) {
+                    role = 'admin';
+                } else if (code && code !== '') {
+                    error.textContent = 'کد اشتباهه داداش!';
+                    return;
+                }
+
+                // Add new member
+                const newMember = { name, role, emoji: '⭐' };
+                allMembers.push(newMember);
+                localStorage.setItem('gmMembers', JSON.stringify(allMembers));
+                renderTeam();
+
+                // Login
+                currentUser = name;
+                currentRole = role;
+                localStorage.setItem('gmUser', JSON.stringify({ name, role }));
+                updateUIForUser();
+                updateOnlineList();
+                closeModal();
+
+                messages.push({
+                    user: '🎮 سیستم',
+                    text: `${name} به تیم پیوست داداش! 🎉`,
+                    time: getCurrentTime()
+                });
+                localStorage.setItem('gmMessages', JSON.stringify(messages));
+                renderChat();
+                return;
+            }
+
+            // ===== LOGIN =====
+            if (!existingMember) {
+                error.textContent = 'این کاربر وجود نداره! اول ثبت‌نام کن.';
+                return;
+            }
+
+            // Check code for owner/admin
+            if (existingMember.role === 'owner' && code !== CODES.owner && code !== '') {
+                error.textContent = 'کد Owner اشتباهه!';
+                return;
+            }
+            if (existingMember.role === 'admin' && code !== CODES.admin && code !== '') {
+                error.textContent = 'کد Admin اشتباهه!';
+                return;
+            }
+            if (code && code !== CODES.owner && code !== CODES.admin) {
+                error.textContent = 'کد اشتباهه داداش!';
+                return;
+            }
+
+            // Login
+            currentUser = name;
+            currentRole = existingMember.role;
+            localStorage.setItem('gmUser', JSON.stringify({ name, role: currentRole }));
+            updateUIForUser();
+            updateOnlineList();
+            closeModal();
+
+            messages.push({
+                user: '🎮 سیستم',
+                text: `${name} وارد شد داداش! 🚀`,
+                time: getCurrentTime()
+            });
+            localStorage.setItem('gmMessages', JSON.stringify(messages));
+            renderChat();
+        }
+
+        // ============================================================
+        // ===== UI =====
+        // ============================================================
+
+        function updateUIForUser() {
+            const authBtns = document.getElementById('authButtons');
+            const userPanel = document.getElementById('userPanel');
+            const nameDisplay = document.getElementById('userNameDisplay');
+            const roleBadge = document.getElementById('userRoleBadge');
+            const avatar = document.getElementById('userAvatar');
+
+            if (currentUser) {
+                authBtns.style.display = 'none';
+                userPanel.style.display = 'flex';
+                nameDisplay.textContent = currentUser;
+                avatar.textContent = currentUser.charAt(0);
+
+                const roleText = currentRole === 'owner' ? '👑 Owner' :
+                    currentRole === 'admin' ? '🛡️ Admin' : '⭐ Member';
+                roleBadge.textContent = roleText;
+                roleBadge.className = 'role-badge ' + (currentRole || 'member');
+            } else {
+                authBtns.style.display = 'flex';
+                userPanel.style.display = 'none';
+            }
+        }
+
+        function logout() {
+            if (!confirm('مطمئنی میخوای خارج شی داداش؟')) return;
+
+            const name = currentUser;
+            currentUser = null;
+            currentRole = null;
+            localStorage.removeItem('gmUser');
+            updateUIForUser();
+            updateOnlineList();
+
+            messages.push({
+                user: '🎮 سیستم',
+                text: `${name} از چت خارج شد!`,
+                time: getCurrentTime()
+            });
+            localStorage.setItem('gmMessages', JSON.stringify(messages));
+            renderChat();
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ============================================================
+        // ===== START =====
+        // ============================================================
+
+        document.addEventListener('DOMContentLoaded', init);
+
+        document.getElementById('modalOverlay').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+    </script>
+
+</body>
+</html>
