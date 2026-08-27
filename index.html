@@ -1,678 +1,176 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Gamer Kids | Gaming Community</title>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>GM Kids Gaming 🎮</title>
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
     box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
+    font-family:tahoma,Arial;
 }
 
 body{
-    font-family:Tahoma,Arial,sans-serif;
-    background:#050811;
-    color:#fff;
-    overflow-x:hidden;
+    margin:0;
+    background:#050505;
+    color:white;
 }
 
-/* Background */
-
-body::before{
-    content:"";
-    position:fixed;
-    width:600px;
-    height:600px;
-    background:#1769ff;
-    opacity:.10;
-    filter:blur(150px);
-    border-radius:50%;
-    top:-250px;
-    right:-150px;
-    pointer-events:none;
-}
-
-body::after{
-    content:"";
-    position:fixed;
-    width:500px;
-    height:500px;
-    background:#8b3dff;
-    opacity:.08;
-    filter:blur(150px);
-    border-radius:50%;
-    bottom:-200px;
-    left:-150px;
-    pointer-events:none;
-}
-
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-.container{
-    width:min(1150px,92%);
-    margin:auto;
-}
-
-/* Header */
 
 header{
-    position:fixed;
-    top:0;
-    left:0;
-    right:0;
-    z-index:1000;
 
-    background:rgba(5,8,17,.72);
-    backdrop-filter:blur(20px);
-
-    border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-nav{
-    height:75px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.logo{
-    font-size:25px;
-    font-weight:900;
-    letter-spacing:-1px;
-}
-
-.logo span{
-    color:#3ddcff;
-}
-
-.nav-links{
-    display:flex;
-    gap:30px;
-    color:#aab5c9;
-    font-size:14px;
-}
-
-.nav-links a{
-    transition:.2s;
-}
-
-.nav-links a:hover{
-    color:#3ddcff;
-}
-
-.login-button{
-    padding:10px 18px;
-    border-radius:12px;
-
-    border:1px solid rgba(61,220,255,.35);
-
-    background:rgba(61,220,255,.08);
-
-    transition:.2s;
-}
-
-.login-button:hover{
-    background:rgba(61,220,255,.16);
-}
-
-/* Hero */
-
-.hero{
-    min-height:850px;
-    padding-top:120px;
-
-    display:flex;
-    align-items:center;
-}
-
-.hero-grid{
-    display:grid;
-    grid-template-columns:1.1fr .9fr;
-    gap:70px;
-    align-items:center;
-}
-
-.badge{
-    display:inline-flex;
-    align-items:center;
-    gap:9px;
-
-    padding:7px 13px;
-
-    border-radius:50px;
-
-    background:rgba(255,255,255,.04);
-
-    border:1px solid rgba(255,255,255,.09);
-
-    color:#aebbd0;
-
-    font-size:13px;
-
-    margin-bottom:22px;
-}
-
-.online{
-    width:8px;
-    height:8px;
-    border-radius:50%;
-
-    background:#4cff9b;
-
-    box-shadow:0 0 15px #4cff9b;
-}
-
-.hero h1{
-    font-size:clamp(48px,7vw,82px);
-    line-height:1.05;
-
-    letter-spacing:-4px;
-
-    margin-bottom:25px;
-}
-
-.gradient{
-    background:linear-gradient(
-        90deg,
-        #fff,
-        #6c9dff,
-        #3ddcff
-    );
-
-    -webkit-background-clip:text;
-    background-clip:text;
-
-    color:transparent;
-}
-
-.hero p{
-    color:#8f9caf;
-    font-size:18px;
-
-    max-width:650px;
-
-    margin-bottom:30px;
-}
-
-.buttons{
-    display:flex;
-    gap:12px;
-    flex-wrap:wrap;
-}
-
-.button{
-    padding:13px 22px;
-    border-radius:13px;
-
-    font-weight:bold;
-
-    border:1px solid rgba(255,255,255,.09);
-
-    transition:.25s;
-}
-
-.button:hover{
-    transform:translateY(-3px);
-}
-
-.primary{
-    background:linear-gradient(
-        135deg,
-        #477fff,
-        #7657ff
-    );
-
-    box-shadow:
-        0 15px 35px
-        rgba(70,100,255,.25);
-}
-
-.secondary{
-    background:rgba(255,255,255,.04);
-}
-
-/* Hero Visual */
-
-.hero-card{
-    padding:22px;
-
-    border-radius:28px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(18,30,51,.95),
-            rgba(7,12,22,.98)
-        );
-
-    border:1px solid rgba(255,255,255,.09);
-
-    box-shadow:
-        0 30px 80px rgba(0,0,0,.45);
-}
-
-.game-screen{
-    height:360px;
-
-    border-radius:21px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    position:relative;
-    overflow:hidden;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(61,220,255,.17),
-            transparent 40%
-        ),
-
-        linear-gradient(
-            145deg,
-            #121e34,
-            #070b14
-        );
-
-    border:1px solid rgba(255,255,255,.08);
-}
-
-.controller{
-    font-size:110px;
-
-    filter:
-        drop-shadow(
-            0 20px 30px
-            rgba(0,0,0,.6)
-        );
-}
-
-.floating{
-    position:absolute;
-
-    padding:9px 13px;
-
-    border-radius:11px;
-
-    background:rgba(7,13,24,.9);
-
-    border:1px solid rgba(255,255,255,.1);
-
-    font-size:11px;
-}
-
-.float-one{
-    top:25px;
-    right:22px;
-}
-
-.float-two{
-    bottom:25px;
-    left:22px;
-}
-
-/* Sections */
-
-section{
-    padding:100px 0;
-}
-
-.section-title{
+    padding:25px;
     text-align:center;
-    margin-bottom:45px;
-}
-
-.eyebrow{
-    color:#3ddcff;
-    font-size:12px;
-    font-weight:bold;
-    letter-spacing:2px;
-}
-
-.section-title h2{
-    font-size:38px;
-    margin:5px 0;
-}
-
-.section-title p{
-    color:#8995aa;
-}
-
-/* Games */
-
-.games{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:22px;
-}
-
-.game{
-    min-height:280px;
-
-    padding:30px;
-
-    border-radius:23px;
-
-    background:#0c1321;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    transition:.3s;
-}
-
-.game:hover{
-    transform:translateY(-6px);
-
-    border-color:
-        rgba(61,220,255,.3);
-}
-
-.roblox{
     background:
-        radial-gradient(
-            circle at 90% 10%,
-            rgba(255,60,60,.16),
-            transparent 35%
-        ),
-        #0c1321;
+    linear-gradient(135deg,#00ff88,#0088ff);
+
+    color:#000;
+
 }
 
-.minecraft{
-    background:
-        radial-gradient(
-            circle at 90% 10%,
-            rgba(70,220,100,.15),
-            transparent 35%
-        ),
-        #0c1321;
+
+header h1{
+    font-size:45px;
+    margin:0;
 }
 
-.game-icon{
-    font-size:50px;
-    margin-bottom:10px;
+
+
+.container{
+
+    width:90%;
+    max-width:1000px;
+    margin:auto;
+
 }
 
-.game h3{
-    font-size:28px;
+
+.card{
+
+    background:#111;
+    margin:25px 0;
+    padding:25px;
+    border-radius:25px;
+
+    box-shadow:
+    0 0 20px #00ff8844;
+
 }
 
-.game p{
-    color:#8e9aaf;
-    margin-top:8px;
-}
 
-.tag{
-    display:inline-block;
 
-    margin-top:20px;
+input{
 
-    padding:6px 10px;
+    width:100%;
+    padding:15px;
 
-    border-radius:8px;
-
-    background:rgba(255,255,255,.05);
-
-    color:#bcc7d9;
-
-    font-size:11px;
-}
-
-/* Members */
-
-.members{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:17px;
-}
-
-.member{
-    padding:23px;
-
-    border-radius:18px;
-
-    background:rgba(255,255,255,.025);
-
-    border:1px solid rgba(255,255,255,.08);
-
-    transition:.25s;
-}
-
-.member:hover{
-    transform:translateY(-5px);
-}
-
-.avatar{
-    width:58px;
-    height:58px;
-
-    display:grid;
-    place-items:center;
+    margin:10px 0;
 
     border-radius:15px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #293e70,
-            #162239
-        );
+    border:none;
 
-    font-size:21px;
-    font-weight:bold;
+    background:#222;
 
-    margin-bottom:14px;
+    color:white;
+
+    font-size:18px;
+
 }
 
-.member h3{
-    font-size:17px;
+
+
+button{
+
+    background:#00ff88;
+
+    color:#000;
+
+    border:none;
+
+    padding:15px 30px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
 }
 
-.role{
-    font-size:12px;
-    font-weight:bold;
-    margin-top:3px;
+
+
+button:hover{
+
+    transform:scale(1.05);
+
 }
 
-.owner{
-    border-color:rgba(255,193,7,.35);
 
-    background:
-        radial-gradient(
-            circle at 90% 0%,
-            rgba(255,193,7,.15),
-            transparent 45%
-        ),
-        rgba(255,255,255,.025);
+
+.hidden{
+
+    display:none;
+
 }
 
-.owner .avatar{
-    background:
-        linear-gradient(
-            135deg,
-            #9a7115,
-            #3b2a08
-        );
+
+
+.video{
+
+    background:#181818;
+
+    padding:20px;
+
+    border-radius:20px;
+
+    margin:20px 0;
+
 }
 
-.owner .role{
-    color:#ffd45a;
+
+iframe{
+
+    width:100%;
+
+    height:400px;
+
+    border-radius:15px;
+
 }
 
-.admin{
-    border-color:rgba(80,145,255,.3);
 
-    background:
-        radial-gradient(
-            circle at 90% 0%,
-            rgba(80,145,255,.13),
-            transparent 45%
-        ),
-        rgba(255,255,255,.025);
-}
 
-.admin .avatar{
-    background:
-        linear-gradient(
-            135deg,
-            #315ca7,
-            #182d54
-        );
-}
-
-.admin .role{
-    color:#70adff;
-}
-
-.gamer .role{
-    color:#8d9bb1;
-}
-
-/* About */
-
-.about{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:22px;
-}
-
-.panel{
-    padding:30px;
-
-    border-radius:22px;
-
-    background:rgba(255,255,255,.025);
-
-    border:1px solid rgba(255,255,255,.08);
-}
-
-.panel h3{
-    font-size:23px;
-}
-
-.panel p{
-    color:#8e9aae;
-    margin-top:10px;
-}
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:10px;
-
-    margin-top:25px;
-}
-
-.stat{
-    text-align:center;
+.member{
 
     padding:15px;
 
-    border-radius:14px;
+    background:#222;
 
-    background:rgba(255,255,255,.04);
+    border-radius:15px;
+
+    margin:10px;
+
+    color:#00ff88;
+
 }
 
-.stat strong{
-    display:block;
-    font-size:25px;
-}
-
-.stat span{
-    color:#8995a9;
-    font-size:11px;
-}
-
-/* Footer */
 
 footer{
-    padding:40px 0;
 
     text-align:center;
 
-    color:#718097;
+    padding:30px;
 
-    border-top:
-        1px solid rgba(255,255,255,.08);
-}
-
-.footer-logo{
-    color:#fff;
-    font-size:20px;
-    font-weight:bold;
-}
-
-.footer-logo span{
-    color:#3ddcff;
-}
-
-/* Mobile */
-
-@media(max-width:800px){
-
-    .nav-links{
-        display:none;
-    }
-
-    .hero{
-        padding-top:130px;
-    }
-
-    .hero-grid{
-        grid-template-columns:1fr;
-    }
-
-    .games{
-        grid-template-columns:1fr;
-    }
-
-    .about{
-        grid-template-columns:1fr;
-    }
-
-    .members{
-        grid-template-columns:repeat(2,1fr);
-    }
+    color:#777;
 
 }
 
-@media(max-width:520px){
-
-    .members{
-        grid-template-columns:1fr;
-    }
-
-    .stats{
-        grid-template-columns:1fr;
-    }
-
-    .hero h1{
-        letter-spacing:-2px;
-    }
-
-    .game-screen{
-        height:270px;
-    }
-
-    .controller{
-        font-size:80px;
-    }
-
-}
 
 </style>
 
@@ -682,518 +180,304 @@ footer{
 <body>
 
 
-<!-- HEADER -->
-
 <header>
 
-<nav class="container">
+<h1>
+🎮 GM Kids Gaming
+</h1>
 
-<a href="#home" class="logo">
-GAMER <span>KIDS</span>
-</a>
-
-<div class="nav-links">
-
-<a href="#games">
-بازی‌ها
-</a>
-
-<a href="#members">
-اعضا
-</a>
-
-<a href="#about">
-درباره ما
-</a>
-
-</div>
-
-<a href="login.html" class="login-button">
-🔐 Login
-</a>
-
-</nav>
+<p>
+Minecraft | Roblox | Gaming
+</p>
 
 </header>
 
 
-<!-- HERO -->
 
-<main id="home">
-
-<section class="hero">
-
-<div class="container hero-grid">
+<div class="container">
 
 
-<div>
 
-<div class="badge">
+<!-- LOGIN -->
 
-<span class="online"></span>
+<div class="card" id="loginBox">
 
-Gamer Kids Community
+<h2>
+🔐 ورود اعضا
+</h2>
+
+
+<input id="username"
+placeholder="نام کاربری">
+
+
+<input id="password"
+type="password"
+placeholder="رمز عبور">
+
+
+
+<button onclick="login()">
+
+ورود
+
+</button>
+
 
 </div>
 
 
-<h1>
-
-دنیای
-
-<br>
-
-<span class="gradient">
-Gamer Kids
-</span>
-
-</h1>
 
 
-<p>
 
-به دنیای Gamer Kids خوش آمدید!
-یک تیم دوستانه برای بازی،
-رقابت، خندیدن و ساختن خاطرات
-در Roblox و Minecraft.
+<!-- PANEL -->
 
-</p>
+<div class="card hidden" id="panel">
 
 
-<div class="buttons">
-
-<a
-href="signup.html"
-class="button primary"
->
-🚀 Join Gamer Kids
-</a>
+<h2>
+🔥 خوش آمدی
+<span id="user"></span>
+</h2>
 
 
-<a
-href="#members"
-class="button secondary"
->
+<button onclick="logout()">
+خروج
+</button>
+
+
+<h2>
 👥 اعضای تیم
-</a>
-
-</div>
-
-</div>
-
-
-<div class="hero-card">
-
-<div class="game-screen">
-
-<div class="controller">
-🎮
-</div>
-
-
-<div class="floating float-one">
-ONLINE • GAMER KIDS
-</div>
-
-
-<div class="floating float-two">
-ROBLOX + MINECRAFT
-</div>
-
-</div>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- GAMES -->
-
-<section id="games">
-
-<div class="container">
-
-
-<div class="section-title">
-
-<div class="eyebrow">
-OUR GAMES
-</div>
-
-<h2>
-بازی‌های ما
 </h2>
 
-<p>
-بازی‌هایی که بیشتر از همه پلی می‌دهیم.
-</p>
 
+<div class="member">
+🎮 Barad - Owner
 </div>
 
 
-<div class="games">
-
-
-<div class="game roblox">
-
-<div class="game-icon">
-🟥
-</div>
-
-<h3>
-Roblox
-</h3>
-
-<p>
-بازی‌های مختلف Roblox،
-رقابت، فان و کلی ماجراجویی.
-</p>
-
-<span class="tag">
-PLAY • CREATE • HAVE FUN
-</span>
-
+<div class="member">
+🎮 Mahan - Member
 </div>
 
 
-<div class="game minecraft">
-
-<div class="game-icon">
-⛏️
-</div>
-
-<h3>
-Minecraft
-</h3>
-
-<p>
-ساخت‌وساز، Survival،
-ماجراجویی و کلی اتفاق عجیب.
-</p>
-
-<span class="tag">
-SURVIVE • BUILD • EXPLORE
-</span>
-
+<div class="member">
+🎮 Amir - Member
 </div>
 
 
-</div>
 
-</div>
-
-</section>
-
-
-<!-- MEMBERS -->
-
-<section id="members">
-
-<div class="container">
-
-
-<div class="section-title">
-
-<div class="eyebrow">
-THE SQUAD
-</div>
 
 <h2>
-اعضای Gamer Kids
+📺 ویدیوها
 </h2>
 
-<p>
-اعضای اصلی تیم Gamer Kids
-</p>
-
-</div>
 
 
-<div class="members">
+<div class="video">
 
-
-<!-- OWNER -->
-
-<div class="member owner">
-
-<div class="avatar">
-ب
-</div>
 
 <h3>
-باراد بوالحسنی
+Minecraft Gameplay
 </h3>
 
-<div class="role">
-👑 OWNER
-</div>
+
+<!-- لینک آپارات را اینجا بگذار -->
+
+<iframe
+src="https://www.aparat.com/video/video/embed/videohash/XXXXX/vt/frame"
+allowfullscreen>
+</iframe>
+
 
 </div>
 
 
-<!-- ADMIN -->
 
-<div class="member admin">
+<div class="video">
 
-<div class="avatar">
-ا
-</div>
 
 <h3>
-امیر وفاجو
+Roblox Gameplay
 </h3>
 
-<div class="role">
-🛡️ ADMIN
-</div>
 
-</div>
-
-
-<!-- ADMIN -->
-
-<div class="member admin">
-
-<div class="avatar">
-ا
-</div>
-
-<h3>
-اهورا محمدی
-</h3>
-
-<div class="role">
-🛡️ ADMIN
-</div>
-
-</div>
-
-
-<!-- GAMER -->
-
-<div class="member gamer">
-
-<div class="avatar">
-ی
-</div>
-
-<h3>
-یاسین
-</h3>
-
-<div class="role">
-🎮 GAMER
-</div>
-
-</div>
-
-
-<!-- GAMER -->
-
-<div class="member gamer">
-
-<div class="avatar">
-ا
-</div>
-
-<h3>
-احسان قاضی‌زاده
-</h3>
-
-<div class="role">
-🎮 GAMER
-</div>
-
-</div>
-
-
-<!-- GAMER -->
-
-<div class="member gamer">
-
-<div class="avatar">
-م
-</div>
-
-<h3>
-ماهان
-</h3>
-
-<div class="role">
-🎮 GAMER
-</div>
-
-</div>
+<iframe
+src="https://www.aparat.com/video/video/embed/videohash/YYYYY/vt/frame"
+allowfullscreen>
+</iframe>
 
 
 </div>
 
-</div>
-
-</section>
-
-
-<!-- ABOUT -->
-
-<section id="about">
-
-<div class="container">
-
-
-<div class="section-title">
-
-<div class="eyebrow">
-ABOUT US
-</div>
-
-<h2>
-Gamer Kids
-</h2>
-
-<p>
-یک تیم، کلی بازی و کلی خاطره.
-</p>
-
-</div>
-
-
-<div class="about">
-
-
-<div class="panel">
-
-<h3>
-🎮 یک تیم، کلی بازی
-</h3>
-
-<p>
-
-Gamer Kids یک جمع دوستانه گیمری
-برای بازی کردن، رقابت و ساختن
-خاطرات با هم است.
-
-</p>
-
-
-<div class="stats">
-
-<div class="stat">
-
-<strong>
-6
-</strong>
-
-<span>
-Members
-</span>
-
-</div>
-
-
-<div class="stat">
-
-<strong>
-2
-</strong>
-
-<span>
-Main Games
-</span>
-
-</div>
-
-
-<div class="stat">
-
-<strong>
-∞
-</strong>
-
-<span>
-Memories
-</span>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div class="panel">
-
-<h3>
-⚡ Join Us
-</h3>
-
-<p>
-
-عضو Gamer Kids شو و وارد دنیای
-گیمری ما شو.
-
-</p>
-
-
-<div
-class="buttons"
-style="margin-top:22px"
->
-
-<a
-href="signup.html"
-class="button primary"
->
-📝 Sign Up
-</a>
-
-
-<a
-href="login.html"
-class="button secondary"
->
-🔐 Login
-</a>
-
-</div>
-
-</div>
 
 
 </div>
 
+
+
 </div>
 
-</section>
 
 
-</main>
-
-
-<!-- FOOTER -->
 
 <footer>
 
-<div class="container">
-
-<div class="footer-logo">
-GAMER <span>KIDS</span>
-</div>
-
-<div>
-Made with 🎮 by Gamer Kids
-</div>
-
-<div style="margin-top:5px;font-size:12px">
-© 2026 Gamer Kids
-</div>
-
-</div>
+GM Kids Gaming © 2026
 
 </footer>
 
 
+
+
+
+
+<script>
+
+
+// کاربران سایت
+
+const users=[
+
+{
+username:"barad",
+password:"1234",
+role:"Owner"
+},
+
+{
+username:"mahan",
+password:"1234",
+role:"Member"
+},
+
+{
+username:"amir",
+password:"1234",
+role:"Member"
+}
+
+];
+
+
+
+
+// ورود
+
+function login(){
+
+
+let username=
+document.getElementById("username").value;
+
+
+let password=
+document.getElementById("password").value;
+
+
+
+let user=users.find(
+
+u=>
+
+u.username===username &&
+u.password===password
+
+);
+
+
+
+if(user){
+
+
+localStorage.setItem(
+"gm_user",
+JSON.stringify(user)
+);
+
+
+
+showPanel(user);
+
+
+}
+
+else{
+
+
+alert("❌ نام کاربری یا رمز اشتباه است");
+
+
+}
+
+
+}
+
+
+
+
+
+function showPanel(user){
+
+
+document.getElementById("loginBox")
+.classList.add("hidden");
+
+
+document.getElementById("panel")
+.classList.remove("hidden");
+
+
+document.getElementById("user")
+.innerHTML=
+user.username;
+
+
+
+}
+
+
+
+
+
+function logout(){
+
+
+localStorage.removeItem("gm_user");
+
+
+location.reload();
+
+
+}
+
+
+
+
+
+// بررسی ورود قبلی
+
+
+let saved=
+localStorage.getItem("gm_user");
+
+
+
+if(saved){
+
+
+showPanel(
+JSON.parse(saved)
+);
+
+
+}
+
+
+
+</script>
+
+
 </body>
+
 </html>
