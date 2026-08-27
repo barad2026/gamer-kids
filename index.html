@@ -1,973 +1,680 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gamer Kids | Gaming Community</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Tahoma,Arial,sans-serif;
+    background:#050811;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* Background */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:600px;
+    height:600px;
+    background:#1769ff;
+    opacity:.10;
+    filter:blur(150px);
+    border-radius:50%;
+    top:-250px;
+    right:-150px;
+    pointer-events:none;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#8b3dff;
+    opacity:.08;
+    filter:blur(150px);
+    border-radius:50%;
+    bottom:-200px;
+    left:-150px;
+    pointer-events:none;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:min(1150px,92%);
+    margin:auto;
+}
+
+/* Header */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:1000;
+
+    background:rgba(5,8,17,.72);
+    backdrop-filter:blur(20px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+nav{
+    height:75px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:900;
+    letter-spacing:-1px;
+}
+
+.logo span{
+    color:#3ddcff;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+    color:#aab5c9;
+    font-size:14px;
+}
 
-  <meta charset="UTF-8">
+.nav-links a{
+    transition:.2s;
+}
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+.nav-links a:hover{
+    color:#3ddcff;
+}
 
-  <meta
-    name="description"
-    content="Gamer Kids - Gaming Community"
-  >
+.login-button{
+    padding:10px 18px;
+    border-radius:12px;
 
-  <title>Gamer Kids | Gaming Community</title>
+    border:1px solid rgba(61,220,255,.35);
 
+    background:rgba(61,220,255,.08);
 
-  <style>
+    transition:.2s;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+.login-button:hover{
+    background:rgba(61,220,255,.16);
+}
 
+/* Hero */
 
-    html {
-      scroll-behavior: smooth;
-    }
+.hero{
+    min-height:850px;
+    padding-top:120px;
 
+    display:flex;
+    align-items:center;
+}
 
-    body {
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:70px;
+    align-items:center;
+}
 
-      font-family:
-        Tahoma,
-        Arial,
-        sans-serif;
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
 
-      background:
+    padding:7px 13px;
 
-        radial-gradient(
-          circle at 80% 10%,
-          rgba(0, 170, 255, .16),
-          transparent 30%
-        ),
+    border-radius:50px;
 
-        radial-gradient(
-          circle at 10% 40%,
-          rgba(120, 60, 255, .13),
-          transparent 30%
-        ),
+    background:rgba(255,255,255,.04);
 
-        #050812;
+    border:1px solid rgba(255,255,255,.09);
 
-      color: #fff;
+    color:#aebbd0;
 
-      line-height: 1.8;
+    font-size:13px;
 
-      overflow-x: hidden;
-    }
+    margin-bottom:22px;
+}
 
+.online{
+    width:8px;
+    height:8px;
+    border-radius:50%;
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    background:#4cff9b;
 
+    box-shadow:0 0 15px #4cff9b;
+}
 
-    .container {
+.hero h1{
+    font-size:clamp(48px,7vw,82px);
+    line-height:1.05;
 
-      width: min(1150px, 92%);
+    letter-spacing:-4px;
 
-      margin: auto;
-    }
+    margin-bottom:25px;
+}
 
+.gradient{
+    background:linear-gradient(
+        90deg,
+        #fff,
+        #6c9dff,
+        #3ddcff
+    );
 
-    /* ================= HEADER ================= */
+    -webkit-background-clip:text;
+    background-clip:text;
 
-    header {
+    color:transparent;
+}
 
-      position: fixed;
+.hero p{
+    color:#8f9caf;
+    font-size:18px;
 
-      top: 0;
+    max-width:650px;
 
-      left: 0;
+    margin-bottom:30px;
+}
 
-      right: 0;
+.buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
 
-      z-index: 1000;
+.button{
+    padding:13px 22px;
+    border-radius:13px;
 
-      background:
-        rgba(5, 8, 18, .75);
+    font-weight:bold;
 
-      backdrop-filter:
-        blur(18px);
+    border:1px solid rgba(255,255,255,.09);
 
-      border-bottom:
-        1px solid rgba(255,255,255,.08);
-    }
+    transition:.25s;
+}
 
+.button:hover{
+    transform:translateY(-3px);
+}
 
-    nav {
+.primary{
+    background:linear-gradient(
+        135deg,
+        #477fff,
+        #7657ff
+    );
 
-      height: 75px;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: space-between;
-    }
-
-
-    .logo {
-
-      font-size: 24px;
-
-      font-weight: 900;
-
-      letter-spacing: -1px;
-    }
-
-
-    .logo span {
-
-      color: #38d9ff;
-    }
-
-
-    .nav-links {
-
-      display: flex;
-
-      gap: 28px;
-
-      color: #b5bfd2;
-
-      font-size: 14px;
-    }
-
-
-    .nav-links a {
-
-      transition: .25s;
-    }
-
-
-    .nav-links a:hover {
-
-      color: #38d9ff;
-    }
-
-
-    .nav-button {
-
-      padding: 9px 17px;
-
-      border-radius: 12px;
-
-      border:
-        1px solid rgba(54,217,255,.35);
-
-      background:
-        rgba(54,217,255,.08);
-
-      color: white;
-    }
-
-
-    /* ================= HERO ================= */
-
-    .hero {
-
-      min-height: 820px;
-
-      padding-top: 130px;
-
-      display: flex;
-
-      align-items: center;
-
-      position: relative;
-    }
-
-
-    .hero::before {
-
-      content: "";
-
-      position: absolute;
-
-      width: 450px;
-
-      height: 450px;
-
-      border-radius: 50%;
-
-      background:
-        rgba(54,217,255,.08);
-
-      filter:
-        blur(90px);
-
-      left: -180px;
-
-      top: 200px;
-    }
-
-
-    .hero-grid {
-
-      display: grid;
-
-      grid-template-columns:
-        1.1fr .9fr;
-
-      gap: 70px;
-
-      align-items: center;
-    }
-
-
-    .badge {
-
-      display: inline-flex;
-
-      align-items: center;
-
-      gap: 8px;
-
-      padding: 7px 13px;
-
-      border-radius: 50px;
-
-      border:
-        1px solid rgba(255,255,255,.1);
-
-      background:
-        rgba(255,255,255,.04);
-
-      color: #b9c7dc;
-
-      font-size: 13px;
-
-      margin-bottom: 22px;
-    }
-
-
-    .online-dot {
-
-      width: 8px;
-
-      height: 8px;
-
-      border-radius: 50%;
-
-      background: #4cff9b;
-
-      box-shadow:
-        0 0 15px #4cff9b;
-    }
-
-
-    .hero h1 {
-
-      font-size:
-        clamp(45px, 7vw, 80px);
-
-      line-height: 1.05;
-
-      letter-spacing: -4px;
-
-      margin-bottom: 25px;
-    }
-
-
-    .gradient {
-
-      background:
-        linear-gradient(
-          90deg,
-          #ffffff,
-          #63a0ff,
-          #38ddff
-        );
-
-      -webkit-background-clip: text;
-
-      background-clip: text;
-
-      color: transparent;
-    }
-
-
-    .hero p {
-
-      color: #929eb4;
-
-      font-size: 18px;
-
-      max-width: 650px;
-
-      margin-bottom: 30px;
-    }
-
-
-    .buttons {
-
-      display: flex;
-
-      gap: 12px;
-
-      flex-wrap: wrap;
-    }
-
-
-    .button {
-
-      padding: 13px 22px;
-
-      border-radius: 13px;
-
-      border:
-        1px solid rgba(255,255,255,.1);
-
-      font-weight: bold;
-
-      transition: .25s;
-    }
-
-
-    .button:hover {
-
-      transform:
-        translateY(-3px);
-    }
-
-
-    .primary {
-
-      background:
-        linear-gradient(
-          135deg,
-          #4e82ff,
-          #7b58ff
-        );
-
-      box-shadow:
+    box-shadow:
         0 15px 35px
-        rgba(80,110,255,.25);
-    }
+        rgba(70,100,255,.25);
+}
 
+.secondary{
+    background:rgba(255,255,255,.04);
+}
 
-    .secondary {
+/* Hero Visual */
 
-      background:
-        rgba(255,255,255,.04);
-    }
+.hero-card{
+    padding:22px;
 
+    border-radius:28px;
 
-    /* ================= HERO CARD ================= */
-
-    .hero-card {
-
-      padding: 24px;
-
-      border-radius: 28px;
-
-      background:
+    background:
         linear-gradient(
-          145deg,
-          rgba(18,29,49,.95),
-          rgba(7,12,22,.98)
+            145deg,
+            rgba(18,30,51,.95),
+            rgba(7,12,22,.98)
         );
 
-      border:
-        1px solid rgba(255,255,255,.09);
+    border:1px solid rgba(255,255,255,.09);
 
-      box-shadow:
-        0 30px 80px
-        rgba(0,0,0,.45);
-    }
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.45);
+}
 
+.game-screen{
+    height:360px;
 
-    .game-screen {
+    border-radius:21px;
 
-      height: 350px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-      border-radius: 20px;
+    position:relative;
+    overflow:hidden;
 
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      position: relative;
-
-      overflow: hidden;
-
-      background:
-
+    background:
         radial-gradient(
-          circle,
-          rgba(54,217,255,.16),
-          transparent 40%
+            circle,
+            rgba(61,220,255,.17),
+            transparent 40%
         ),
 
         linear-gradient(
-          145deg,
-          #121d31,
-          #070b14
+            145deg,
+            #121e34,
+            #070b14
         );
 
-      border:
-        1px solid rgba(255,255,255,.08);
-    }
+    border:1px solid rgba(255,255,255,.08);
+}
 
+.controller{
+    font-size:110px;
 
-    .controller {
-
-      font-size: 105px;
-
-      filter:
+    filter:
         drop-shadow(
-          0 20px 30px
-          rgba(0,0,0,.5)
+            0 20px 30px
+            rgba(0,0,0,.6)
         );
-    }
+}
 
+.floating{
+    position:absolute;
 
-    .floating-card {
+    padding:9px 13px;
 
-      position: absolute;
+    border-radius:11px;
 
-      background:
-        rgba(10,17,30,.9);
+    background:rgba(7,13,24,.9);
 
-      border:
-        1px solid rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.1);
 
-      border-radius: 12px;
+    font-size:11px;
+}
 
-      padding: 9px 13px;
+.float-one{
+    top:25px;
+    right:22px;
+}
 
-      font-size: 12px;
-    }
+.float-two{
+    bottom:25px;
+    left:22px;
+}
 
+/* Sections */
 
-    .floating-one {
+section{
+    padding:100px 0;
+}
 
-      top: 25px;
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
 
-      right: 22px;
-    }
+.eyebrow{
+    color:#3ddcff;
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
 
+.section-title h2{
+    font-size:38px;
+    margin:5px 0;
+}
 
-    .floating-two {
+.section-title p{
+    color:#8995aa;
+}
 
-      bottom: 25px;
+/* Games */
 
-      left: 22px;
-    }
+.games{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+}
 
+.game{
+    min-height:280px;
 
-    /* ================= SECTIONS ================= */
+    padding:30px;
 
-    section {
+    border-radius:23px;
 
-      padding: 100px 0;
-    }
+    background:#0c1321;
 
+    border:1px solid rgba(255,255,255,.08);
 
-    .section-title {
+    transition:.3s;
+}
 
-      text-align: center;
+.game:hover{
+    transform:translateY(-6px);
 
-      margin-bottom: 45px;
-    }
+    border-color:
+        rgba(61,220,255,.3);
+}
 
-
-    .eyebrow {
-
-      color: #38d9ff;
-
-      font-size: 13px;
-
-      font-weight: bold;
-
-      letter-spacing: 2px;
-    }
-
-
-    .section-title h2 {
-
-      font-size: 38px;
-
-      margin: 5px 0;
-    }
-
-
-    .section-title p {
-
-      color: #8f9bb0;
-    }
-
-
-    /* ================= GAMES ================= */
-
-    .games {
-
-      display: grid;
-
-      grid-template-columns:
-        1fr 1fr;
-
-      gap: 22px;
-    }
-
-
-    .game {
-
-      min-height: 280px;
-
-      padding: 30px;
-
-      border-radius: 23px;
-
-      border:
-        1px solid rgba(255,255,255,.08);
-
-      background: #0d1422;
-
-      position: relative;
-
-      overflow: hidden;
-
-      transition: .3s;
-    }
-
-
-    .game:hover {
-
-      transform:
-        translateY(-5px);
-
-      border-color:
-        rgba(54,217,255,.3);
-    }
-
-
-    .roblox {
-
-      background:
-
+.roblox{
+    background:
         radial-gradient(
-          circle at 90% 10%,
-          rgba(255,60,60,.18),
-          transparent 35%
+            circle at 90% 10%,
+            rgba(255,60,60,.16),
+            transparent 35%
         ),
+        #0c1321;
+}
 
-        #0d1422;
-    }
-
-
-    .minecraft {
-
-      background:
-
+.minecraft{
+    background:
         radial-gradient(
-          circle at 90% 10%,
-          rgba(60,220,100,.16),
-          transparent 35%
+            circle at 90% 10%,
+            rgba(70,220,100,.15),
+            transparent 35%
         ),
+        #0c1321;
+}
 
-        #0d1422;
-    }
+.game-icon{
+    font-size:50px;
+    margin-bottom:10px;
+}
 
+.game h3{
+    font-size:28px;
+}
 
-    .game-icon {
+.game p{
+    color:#8e9aaf;
+    margin-top:8px;
+}
 
-      font-size: 50px;
+.tag{
+    display:inline-block;
 
-      margin-bottom: 10px;
-    }
+    margin-top:20px;
 
+    padding:6px 10px;
 
-    .game h3 {
+    border-radius:8px;
 
-      font-size: 28px;
+    background:rgba(255,255,255,.05);
 
-      margin-bottom: 8px;
-    }
+    color:#bcc7d9;
 
+    font-size:11px;
+}
 
-    .game p {
+/* Members */
 
-      color: #929eb4;
+.members{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:17px;
+}
 
-      max-width: 500px;
-    }
+.member{
+    padding:23px;
 
+    border-radius:18px;
 
-    .tag {
+    background:rgba(255,255,255,.025);
 
-      display: inline-block;
+    border:1px solid rgba(255,255,255,.08);
 
-      margin-top: 20px;
+    transition:.25s;
+}
 
-      padding: 6px 11px;
+.member:hover{
+    transform:translateY(-5px);
+}
 
-      border-radius: 8px;
+.avatar{
+    width:58px;
+    height:58px;
 
-      background:
-        rgba(255,255,255,.06);
+    display:grid;
+    place-items:center;
 
-      color: #c5d0e2;
+    border-radius:15px;
 
-      font-size: 11px;
-    }
-
-
-    /* ================= MEMBERS ================= */
-
-    .members {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(3,1fr);
-
-      gap: 17px;
-    }
-
-
-    .member {
-
-      padding: 23px;
-
-      border-radius: 18px;
-
-      background:
-        rgba(255,255,255,.025);
-
-      border:
-        1px solid rgba(255,255,255,.08);
-
-      transition: .25s;
-
-      position: relative;
-
-      overflow: hidden;
-    }
-
-
-    .member:hover {
-
-      transform:
-        translateY(-5px);
-
-      border-color:
-        rgba(70,140,255,.4);
-    }
-
-
-    /* OWNER */
-
-    .member.owner {
-
-      background:
-
-        radial-gradient(
-          circle at 90% 0%,
-          rgba(255,193,7,.18),
-          transparent 45%
-        ),
-
-        rgba(255,255,255,.035);
-
-      border-color:
-        rgba(255,193,7,.35);
-
-      box-shadow:
-        0 15px 40px
-        rgba(255,193,7,.08);
-    }
-
-
-    .member.owner .avatar {
-
-      background:
+    background:
         linear-gradient(
-          135deg,
-          #8a6510,
-          #3b2a08
+            135deg,
+            #293e70,
+            #162239
         );
 
-      box-shadow:
-        0 0 25px
-        rgba(255,193,7,.25);
-    }
+    font-size:21px;
+    font-weight:bold;
 
+    margin-bottom:14px;
+}
 
-    .member.owner .role {
+.member h3{
+    font-size:17px;
+}
 
-      color: #ffd45a;
-    }
+.role{
+    font-size:12px;
+    font-weight:bold;
+    margin-top:3px;
+}
 
+.owner{
+    border-color:rgba(255,193,7,.35);
 
-    /* ADMIN */
-
-    .member.admin {
-
-      background:
-
+    background:
         radial-gradient(
-          circle at 90% 0%,
-          rgba(75,130,255,.14),
-          transparent 45%
+            circle at 90% 0%,
+            rgba(255,193,7,.15),
+            transparent 45%
         ),
-
         rgba(255,255,255,.025);
+}
 
-      border-color:
-        rgba(75,130,255,.28);
-    }
-
-
-    .member.admin .avatar {
-
-      background:
+.owner .avatar{
+    background:
         linear-gradient(
-          135deg,
-          #315ca7,
-          #182d54
+            135deg,
+            #9a7115,
+            #3b2a08
         );
-    }
+}
 
+.owner .role{
+    color:#ffd45a;
+}
 
-    .member.admin .role {
+.admin{
+    border-color:rgba(80,145,255,.3);
 
-      color: #72b0ff;
-    }
-
-
-    .avatar {
-
-      width: 58px;
-
-      height: 58px;
-
-      display: grid;
-
-      place-items: center;
-
-      border-radius: 15px;
-
-      background:
-        linear-gradient(
-          135deg,
-          #293e70,
-          #162239
-        );
-
-      font-size: 21px;
-
-      font-weight: bold;
-
-      margin-bottom: 14px;
-    }
-
-
-    .member h3 {
-
-      font-size: 17px;
-    }
-
-
-    .member .role {
-
-      font-size: 12px;
-
-      font-weight: bold;
-
-      margin-top: 3px;
-    }
-
-
-    /* ================= ABOUT ================= */
-
-    .about {
-
-      display: grid;
-
-      grid-template-columns:
-        1fr 1fr;
-
-      gap: 22px;
-    }
-
-
-    .panel {
-
-      padding: 30px;
-
-      border-radius: 22px;
-
-      background:
+    background:
+        radial-gradient(
+            circle at 90% 0%,
+            rgba(80,145,255,.13),
+            transparent 45%
+        ),
         rgba(255,255,255,.025);
+}
 
-      border:
+.admin .avatar{
+    background:
+        linear-gradient(
+            135deg,
+            #315ca7,
+            #182d54
+        );
+}
+
+.admin .role{
+    color:#70adff;
+}
+
+.gamer .role{
+    color:#8d9bb1;
+}
+
+/* About */
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+}
+
+.panel{
+    padding:30px;
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.025);
+
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.panel h3{
+    font-size:23px;
+}
+
+.panel p{
+    color:#8e9aae;
+    margin-top:10px;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+
+    margin-top:25px;
+}
+
+.stat{
+    text-align:center;
+
+    padding:15px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.04);
+}
+
+.stat strong{
+    display:block;
+    font-size:25px;
+}
+
+.stat span{
+    color:#8995a9;
+    font-size:11px;
+}
+
+/* Footer */
+
+footer{
+    padding:40px 0;
+
+    text-align:center;
+
+    color:#718097;
+
+    border-top:
         1px solid rgba(255,255,255,.08);
+}
+
+.footer-logo{
+    color:#fff;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.footer-logo span{
+    color:#3ddcff;
+}
+
+/* Mobile */
+
+@media(max-width:800px){
+
+    .nav-links{
+        display:none;
     }
 
-
-    .panel h3 {
-
-      font-size: 23px;
+    .hero{
+        padding-top:130px;
     }
 
-
-    .panel p {
-
-      color: #929eb4;
-
-      margin-top: 10px;
+    .hero-grid{
+        grid-template-columns:1fr;
     }
 
-
-    .stats {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(3,1fr);
-
-      gap: 10px;
-
-      margin-top: 25px;
+    .games{
+        grid-template-columns:1fr;
     }
 
-
-    .stat {
-
-      text-align: center;
-
-      padding: 15px;
-
-      border-radius: 14px;
-
-      background:
-        rgba(255,255,255,.04);
+    .about{
+        grid-template-columns:1fr;
     }
 
-
-    .stat strong {
-
-      display: block;
-
-      font-size: 25px;
+    .members{
+        grid-template-columns:repeat(2,1fr);
     }
 
+}
 
-    .stat span {
+@media(max-width:520px){
 
-      color: #8996ac;
-
-      font-size: 11px;
+    .members{
+        grid-template-columns:1fr;
     }
 
-
-    /* ================= FOOTER ================= */
-
-    footer {
-
-      padding: 40px 0;
-
-      text-align: center;
-
-      color: #758197;
-
-      border-top:
-        1px solid rgba(255,255,255,.08);
+    .stats{
+        grid-template-columns:1fr;
     }
 
-
-    .footer-logo {
-
-      color: #fff;
-
-      font-size: 20px;
-
-      font-weight: bold;
-
-      margin-bottom: 5px;
+    .hero h1{
+        letter-spacing:-2px;
     }
 
-
-    .footer-logo span {
-
-      color: #38d9ff;
+    .game-screen{
+        height:270px;
     }
 
-
-    /* ================= RESPONSIVE ================= */
-
-    @media(max-width: 800px) {
-
-      .nav-links {
-        display: none;
-      }
-
-
-      .hero {
-        padding-top: 130px;
-      }
-
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-      }
-
-
-      .games {
-        grid-template-columns: 1fr;
-      }
-
-
-      .about {
-        grid-template-columns: 1fr;
-      }
-
-
-      .members {
-        grid-template-columns:
-          repeat(2,1fr);
-      }
-
-
-      .hero h1 {
-        letter-spacing: -2px;
-      }
-
+    .controller{
+        font-size:80px;
     }
 
+}
 
-    @media(max-width: 520px) {
-
-      .members {
-        grid-template-columns: 1fr;
-      }
-
-
-      .stats {
-        grid-template-columns: 1fr;
-      }
-
-
-      .game-screen {
-        height: 270px;
-      }
-
-
-      .controller {
-        font-size: 80px;
-      }
-
-    }
-
-  </style>
+</style>
 
 </head>
 
@@ -975,522 +682,518 @@
 <body>
 
 
-  <!-- ================= HEADER ================= -->
+<!-- HEADER -->
 
-  <header>
+<header>
 
-    <nav class="container">
+<nav class="container">
 
-      <a href="#home" class="logo">
-        GAMER <span>KIDS</span>
-      </a>
+<a href="#home" class="logo">
+GAMER <span>KIDS</span>
+</a>
 
+<div class="nav-links">
 
-      <div class="nav-links">
+<a href="#games">
+بازی‌ها
+</a>
 
-        <a href="#games">
-          بازی‌ها
-        </a>
+<a href="#members">
+اعضا
+</a>
 
-        <a href="#members">
-          اعضای تیم
-        </a>
+<a href="#about">
+درباره ما
+</a>
 
-        <a href="#about">
-          درباره ما
-        </a>
+</div>
 
-      </div>
+<a href="login.html" class="login-button">
+🔐 Login
+</a>
 
+</nav>
 
-      <a href="#members" class="nav-button">
-        اعضای تیم
-      </a>
+</header>
 
-    </nav>
 
-  </header>
+<!-- HERO -->
 
+<main id="home">
 
-  <!-- ================= HERO ================= -->
+<section class="hero">
 
-  <main id="home">
+<div class="container hero-grid">
 
-    <section class="hero">
 
-      <div class="container hero-grid">
+<div>
 
+<div class="badge">
 
-        <div>
+<span class="online"></span>
 
-          <div class="badge">
+Gamer Kids Community
 
-            <span class="online-dot"></span>
+</div>
 
-            Gamer Kids Community
 
-          </div>
+<h1>
 
+دنیای
 
-          <h1>
+<br>
 
-            اینجا دنیای
+<span class="gradient">
+Gamer Kids
+</span>
 
-            <br>
+</h1>
 
-            <span class="gradient">
-              Gamer Kids
-            </span>
 
-            است.
+<p>
 
-          </h1>
+به دنیای Gamer Kids خوش آمدید!
+یک تیم دوستانه برای بازی،
+رقابت، خندیدن و ساختن خاطرات
+در Roblox و Minecraft.
 
+</p>
 
-          <p>
 
-            یک جمع دوستانه برای بازی،
-            رقابت، خندیدن و ساختن کلی خاطره.
+<div class="buttons">
 
-            ما بیشتر وقتمان را در
-            Roblox و Minecraft می‌گذرانیم!
+<a
+href="signup.html"
+class="button primary"
+>
+🚀 Join Gamer Kids
+</a>
 
-          </p>
 
+<a
+href="#members"
+class="button secondary"
+>
+👥 اعضای تیم
+</a>
 
-          <div class="buttons">
+</div>
 
-            <a
-              href="#games"
-              class="button primary"
-            >
-              🎮 بریم سراغ بازی‌ها
-            </a>
+</div>
 
 
-            <a
-              href="#members"
-              class="button secondary"
-            >
-              آشنایی با تیم
-            </a>
+<div class="hero-card">
 
-          </div>
+<div class="game-screen">
 
-        </div>
+<div class="controller">
+🎮
+</div>
 
 
-        <div class="hero-card">
+<div class="floating float-one">
+ONLINE • GAMER KIDS
+</div>
 
-          <div class="game-screen">
 
-            <div class="controller">
-              🎮
-            </div>
+<div class="floating float-two">
+ROBLOX + MINECRAFT
+</div>
 
+</div>
 
-            <div class="floating-card floating-one">
-              ONLINE • GAMER KIDS
-            </div>
+</div>
 
 
-            <div class="floating-card floating-two">
-              ROBLOX + MINECRAFT
-            </div>
+</div>
 
-          </div>
+</section>
 
-        </div>
 
-      </div>
+<!-- GAMES -->
 
-    </section>
+<section id="games">
 
+<div class="container">
 
-    <!-- ================= GAMES ================= -->
 
-    <section id="games">
+<div class="section-title">
 
-      <div class="container">
+<div class="eyebrow">
+OUR GAMES
+</div>
 
+<h2>
+بازی‌های ما
+</h2>
 
-        <div class="section-title">
+<p>
+بازی‌هایی که بیشتر از همه پلی می‌دهیم.
+</p>
 
-          <div class="eyebrow">
-            OUR GAMES
-          </div>
+</div>
 
-          <h2>
-            بازی‌های مورد علاقه ما
-          </h2>
 
-          <p>
-            دو دنیایی که بیشتر از همه
-            داخلشان بازی می‌کنیم.
-          </p>
+<div class="games">
 
-        </div>
 
+<div class="game roblox">
 
-        <div class="games">
+<div class="game-icon">
+🟥
+</div>
 
+<h3>
+Roblox
+</h3>
 
-          <article class="game roblox">
+<p>
+بازی‌های مختلف Roblox،
+رقابت، فان و کلی ماجراجویی.
+</p>
 
-            <div class="game-icon">
-              🟥
-            </div>
+<span class="tag">
+PLAY • CREATE • HAVE FUN
+</span>
 
-            <h3>
-              Roblox
-            </h3>
+</div>
 
-            <p>
 
-              از بازی‌های رقابتی و فان
-              گرفته تا تجربه‌های مختلف Roblox؛
-              همیشه چیزی برای بازی کردن داریم.
+<div class="game minecraft">
 
-            </p>
+<div class="game-icon">
+⛏️
+</div>
 
-            <span class="tag">
-              PLAY • CREATE • HAVE FUN
-            </span>
+<h3>
+Minecraft
+</h3>
 
-          </article>
+<p>
+ساخت‌وساز، Survival،
+ماجراجویی و کلی اتفاق عجیب.
+</p>
 
+<span class="tag">
+SURVIVE • BUILD • EXPLORE
+</span>
 
-          <article class="game minecraft">
+</div>
 
-            <div class="game-icon">
-              ⛏️
-            </div>
 
-            <h3>
-              Minecraft
-            </h3>
+</div>
 
-            <p>
+</div>
 
-              ساخت‌وساز، بقا، ماجراجویی
-              و کلی اتفاق عجیب در دنیای Minecraft.
+</section>
 
-            </p>
 
-            <span class="tag">
-              SURVIVE • BUILD • EXPLORE
-            </span>
+<!-- MEMBERS -->
 
-          </article>
+<section id="members">
 
+<div class="container">
 
-        </div>
 
-      </div>
+<div class="section-title">
 
-    </section>
+<div class="eyebrow">
+THE SQUAD
+</div>
 
+<h2>
+اعضای Gamer Kids
+</h2>
 
-    <!-- ================= MEMBERS ================= -->
+<p>
+اعضای اصلی تیم Gamer Kids
+</p>
 
-    <section id="members">
+</div>
 
-      <div class="container">
 
+<div class="members">
 
-        <div class="section-title">
 
-          <div class="eyebrow">
-            THE SQUAD
-          </div>
+<!-- OWNER -->
 
-          <h2>
-            اعضای Gamer Kids
-          </h2>
+<div class="member owner">
 
-          <p>
-            تیمی که بازی بدون آن‌ها مزه ندارد 😎
-          </p>
+<div class="avatar">
+ب
+</div>
 
-        </div>
+<h3>
+باراد بوالحسنی
+</h3>
 
+<div class="role">
+👑 OWNER
+</div>
 
-        <div class="members">
+</div>
 
 
-          <!-- OWNER -->
+<!-- ADMIN -->
 
-          <article class="member owner">
+<div class="member admin">
 
-            <div class="avatar">
-              ب
-            </div>
+<div class="avatar">
+ا
+</div>
 
-            <h3>
-              باراد بوالحسنی
-            </h3>
+<h3>
+امیر وفاجو
+</h3>
 
-            <div class="role">
-              👑 OWNER
-            </div>
+<div class="role">
+🛡️ ADMIN
+</div>
 
-          </article>
+</div>
 
 
-          <!-- ADMIN -->
+<!-- ADMIN -->
 
-          <article class="member admin">
+<div class="member admin">
 
-            <div class="avatar">
-              ا
-            </div>
+<div class="avatar">
+ا
+</div>
 
-            <h3>
-              امیر وفاجو
-            </h3>
+<h3>
+اهورا محمدی
+</h3>
 
-            <div class="role">
-              🛡️ ADMIN
-            </div>
+<div class="role">
+🛡️ ADMIN
+</div>
 
-          </article>
+</div>
 
 
-          <!-- ADMIN -->
+<!-- GAMER -->
 
-          <article class="member admin">
+<div class="member gamer">
 
-            <div class="avatar">
-              ا
-            </div>
+<div class="avatar">
+ی
+</div>
 
-            <h3>
-              اهورا محمدی
-            </h3>
+<h3>
+یاسین
+</h3>
 
-            <div class="role">
-              🛡️ ADMIN
-            </div>
+<div class="role">
+🎮 GAMER
+</div>
 
-          </article>
+</div>
 
 
-          <!-- GAMER -->
+<!-- GAMER -->
 
-          <article class="member">
+<div class="member gamer">
 
-            <div class="avatar">
-              ی
-            </div>
+<div class="avatar">
+ا
+</div>
 
-            <h3>
-              یاسین
-            </h3>
+<h3>
+احسان قاضی‌زاده
+</h3>
 
-            <div class="role">
-              🎮 GAMER
-            </div>
+<div class="role">
+🎮 GAMER
+</div>
 
-          </article>
+</div>
 
 
-          <!-- GAMER -->
+<!-- GAMER -->
 
-          <article class="member">
+<div class="member gamer">
 
-            <div class="avatar">
-              ا
-            </div>
+<div class="avatar">
+م
+</div>
 
-            <h3>
-              احسان قاضی‌زاده
-            </h3>
+<h3>
+ماهان
+</h3>
 
-            <div class="role">
-              🎮 GAMER
-            </div>
+<div class="role">
+🎮 GAMER
+</div>
 
-          </article>
+</div>
 
 
-          <!-- GAMER -->
+</div>
 
-          <article class="member">
+</div>
 
-            <div class="avatar">
-              م
-            </div>
+</section>
 
-            <h3>
-              ماهان
-            </h3>
 
-            <div class="role">
-              🎮 GAMER
-            </div>
+<!-- ABOUT -->
 
-          </article>
+<section id="about">
 
+<div class="container">
 
-        </div>
 
-      </div>
+<div class="section-title">
 
-    </section>
+<div class="eyebrow">
+ABOUT US
+</div>
 
+<h2>
+Gamer Kids
+</h2>
 
-    <!-- ================= ABOUT ================= -->
+<p>
+یک تیم، کلی بازی و کلی خاطره.
+</p>
 
-    <section id="about">
+</div>
 
-      <div class="container">
 
+<div class="about">
 
-        <div class="section-title">
 
-          <div class="eyebrow">
-            ABOUT US
-          </div>
+<div class="panel">
 
-          <h2>
-            Gamer Kids یعنی چی؟
-          </h2>
+<h3>
+🎮 یک تیم، کلی بازی
+</h3>
 
-        </div>
+<p>
 
+Gamer Kids یک جمع دوستانه گیمری
+برای بازی کردن، رقابت و ساختن
+خاطرات با هم است.
 
-        <div class="about">
+</p>
 
 
-          <div class="panel">
+<div class="stats">
 
-            <h3>
-              🎮 یک تیم، کلی بازی
-            </h3>
+<div class="stat">
 
-            <p>
+<strong>
+6
+</strong>
 
-              Gamer Kids یک جمع دوستانه گیمری است؛
-              جایی برای بازی کردن، خندیدن،
-              رقابت و ساختن خاطرات خوب با هم.
+<span>
+Members
+</span>
 
-            </p>
+</div>
 
 
-            <div class="stats">
+<div class="stat">
 
-              <div class="stat">
+<strong>
+2
+</strong>
 
-                <strong>
-                  6
-                </strong>
+<span>
+Main Games
+</span>
 
-                <span>
-                  عضو
-                </span>
+</div>
 
-              </div>
 
+<div class="stat">
 
-              <div class="stat">
+<strong>
+∞
+</strong>
 
-                <strong>
-                  2
-                </strong>
+<span>
+Memories
+</span>
 
-                <span>
-                  بازی اصلی
-                </span>
+</div>
 
-              </div>
+</div>
 
+</div>
 
-              <div class="stat">
 
-                <strong>
-                  ∞
-                </strong>
+<div class="panel">
 
-                <span>
-                  خاطره
-                </span>
+<h3>
+⚡ Join Us
+</h3>
 
-              </div>
+<p>
 
-            </div>
+عضو Gamer Kids شو و وارد دنیای
+گیمری ما شو.
 
-          </div>
+</p>
 
 
-          <div class="panel">
+<div
+class="buttons"
+style="margin-top:22px"
+>
 
-            <h3>
-              ⚡ هدف ما
-            </h3>
+<a
+href="signup.html"
+class="button primary"
+>
+📝 Sign Up
+</a>
 
-            <p>
 
-              قرار نیست فقط یک بازی را تمام کنیم؛
-              می‌خواهیم با هم بازی کنیم،
-              رقابت کنیم و هر بار یک خاطره جدید بسازیم.
+<a
+href="login.html"
+class="button secondary"
+>
+🔐 Login
+</a>
 
-            </p>
+</div>
 
+</div>
 
-            <div
-              class="buttons"
-              style="margin-top:22px"
-            >
 
-              <a
-                href="#home"
-                class="button primary"
-              >
-                🚀 شروع کنیم
-              </a>
+</div>
 
-            </div>
+</div>
 
-          </div>
+</section>
 
 
-        </div>
+</main>
 
-      </div>
 
-    </section>
+<!-- FOOTER -->
 
-  </main>
+<footer>
 
+<div class="container">
 
-  <!-- ================= FOOTER ================= -->
+<div class="footer-logo">
+GAMER <span>KIDS</span>
+</div>
 
-  <footer>
+<div>
+Made with 🎮 by Gamer Kids
+</div>
 
-    <div class="container">
+<div style="margin-top:5px;font-size:12px">
+© 2026 Gamer Kids
+</div>
 
-      <div class="footer-logo">
-        GAMER <span>KIDS</span>
-      </div>
+</div>
 
-      <div>
-        Made with 🎮 by Gamer Kids
-      </div>
-
-      <div
-        style="
-          margin-top:5px;
-          font-size:12px
-        "
-      >
-        © 2026 Gamer Kids
-      </div>
-
-    </div>
-
-  </footer>
+</footer>
 
 
 </body>
-
 </html>
