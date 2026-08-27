@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GM Kids Gaming</title>
+    <title>GM Kids | پنل مدیریت</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700;900&display=swap" rel="stylesheet" />
@@ -14,12 +14,14 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             font-family: 'Vazirmatn', sans-serif;
             background: #0a0d1a;
             color: #e4e6f0;
             min-height: 100vh;
         }
+
         ::-webkit-scrollbar {
             width: 6px;
         }
@@ -31,6 +33,7 @@
             border-radius: 10px;
         }
 
+        /* ===== HEADER ===== */
         header {
             background: rgba(10, 13, 26, 0.95);
             backdrop-filter: blur(14px);
@@ -45,6 +48,7 @@
             flex-wrap: wrap;
             gap: 10px;
         }
+
         .logo {
             display: flex;
             align-items: center;
@@ -55,17 +59,20 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .logo i {
             font-size: 28px;
             -webkit-text-fill-color: #6c5ce7;
         }
+
         .nav-links {
             display: flex;
-            gap: 20px;
+            gap: 18px;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 13px;
             flex-wrap: wrap;
         }
+
         .nav-links a {
             transition: 0.3s;
             padding: 4px 0;
@@ -74,16 +81,19 @@
             color: #e4e6f0;
             text-decoration: none;
         }
+
         .nav-links a:hover,
         .nav-links .active {
             color: #a29bfe;
             border-bottom-color: #6c5ce7;
         }
+
         .user-info {
             display: flex;
             align-items: center;
             gap: 12px;
         }
+
         .user-info .avatar {
             width: 36px;
             height: 36px;
@@ -95,6 +105,7 @@
             font-weight: 700;
             font-size: 15px;
         }
+
         .user-info .role-badge {
             font-size: 11px;
             padding: 2px 12px;
@@ -102,13 +113,16 @@
             background: #6c5ce7;
             color: #fff;
         }
+
         .user-info .role-badge.owner {
             background: #f1c40f;
             color: #000;
         }
+
         .user-info .role-badge.admin {
             background: #3498db;
         }
+
         .btn {
             padding: 7px 18px;
             border-radius: 30px;
@@ -119,198 +133,256 @@
             font-family: inherit;
             font-size: 13px;
         }
+
         .btn-primary {
             background: #6c5ce7;
             color: #fff;
         }
+
         .btn-primary:hover {
             background: #5a4bd1;
             transform: scale(1.05);
         }
+
+        .btn-success {
+            background: #2ecc71;
+            color: #fff;
+        }
+
+        .btn-success:hover {
+            background: #27ae60;
+        }
+
+        .btn-danger {
+            background: #e74c3c;
+            color: #fff;
+        }
+
+        .btn-danger:hover {
+            background: #c0392b;
+        }
+
         .btn-outline {
             background: transparent;
             color: #e4e6f0;
             border: 1.5px solid #6c5ce7;
         }
+
         .btn-outline:hover {
             background: rgba(108, 92, 231, 0.15);
         }
+
         .btn-logout {
             background: transparent;
             color: #e74c3c;
             border: 1px solid #e74c3c;
             padding: 5px 14px;
         }
+
         .btn-logout:hover {
             background: #e74c3c;
             color: #fff;
         }
 
+        .btn-sm {
+            padding: 4px 12px;
+            font-size: 11px;
+        }
+
+        /* ===== HERO ===== */
         .hero {
             text-align: center;
-            padding: 50px 20px 30px;
+            padding: 40px 20px 25px;
             background: radial-gradient(circle at 30% 20%, #1a1f35, #0a0d1a 80%);
             border-bottom: 1px solid rgba(108, 92, 231, 0.15);
         }
+
         .hero h1 {
-            font-size: 44px;
+            font-size: 38px;
             font-weight: 900;
             background: linear-gradient(135deg, #fff, #a29bfe);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .hero h1 span {
             background: linear-gradient(135deg, #f1c40f, #6c5ce7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .hero p {
             color: #8892b0;
-            font-size: 17px;
-            margin: 12px 0 18px;
+            font-size: 15px;
+            margin: 10px 0 14px;
         }
+
         .hero .tagline {
             display: inline-block;
             background: rgba(108, 92, 231, 0.2);
             padding: 4px 20px;
             border-radius: 30px;
             border: 1px solid rgba(108, 92, 231, 0.3);
-            font-size: 13px;
+            font-size: 12px;
             color: #a29bfe;
         }
 
+        /* ===== STATS ===== */
         .stats {
             display: flex;
             justify-content: center;
             gap: 40px;
-            padding: 20px;
+            padding: 18px 20px;
             flex-wrap: wrap;
             background: rgba(20, 26, 43, 0.4);
             border-bottom: 1px solid rgba(108, 92, 231, 0.08);
         }
+
         .stat-item {
             text-align: center;
         }
+
         .stat-item .number {
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 900;
             color: #a29bfe;
         }
+
         .stat-item .label {
             font-size: 12px;
             color: #8892b0;
         }
 
+        /* ===== SECTION ===== */
         .section {
-            padding: 40px 30px;
+            padding: 30px 30px;
         }
+
         .section-title {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 800;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
             gap: 10px;
+            justify-content: space-between;
+            flex-wrap: wrap;
         }
+
         .section-title i {
             color: #6c5ce7;
         }
 
+        .section-title .actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        /* ===== CARDS ===== */
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 18px;
         }
+
         .team-card {
             background: rgba(20, 26, 43, 0.7);
-            border-radius: 16px;
-            padding: 20px 14px;
+            border-radius: 14px;
+            padding: 18px 12px;
             text-align: center;
             border: 1px solid rgba(108, 92, 231, 0.12);
             transition: 0.3s;
         }
+
         .team-card:hover {
             border-color: #6c5ce7;
             transform: translateY(-4px);
         }
+
         .team-card .avatar-big {
-            width: 60px;
-            height: 60px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
-            margin: 0 auto 10px;
+            margin: 0 auto 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 900;
             border: 3px solid #6c5ce7;
         }
+
         .team-card .avatar-big.owner {
             border-color: #f1c40f;
             background: rgba(241, 196, 15, 0.15);
         }
+
         .team-card .avatar-big.admin {
             border-color: #3498db;
             background: rgba(52, 152, 219, 0.15);
         }
+
         .team-card .avatar-big.member {
             border-color: #6c5ce7;
             background: rgba(108, 92, 231, 0.1);
         }
+
         .team-card h4 {
-            font-size: 16px;
+            font-size: 15px;
         }
+
         .team-card .role-tag {
-            font-size: 11px;
-            padding: 2px 12px;
+            font-size: 10px;
+            padding: 2px 10px;
             border-radius: 20px;
             display: inline-block;
             margin-top: 4px;
         }
+
         .team-card .role-tag.owner {
             background: #f1c40f;
             color: #000;
         }
+
         .team-card .role-tag.admin {
             background: #3498db;
             color: #fff;
         }
+
         .team-card .role-tag.member {
             background: #6c5ce7;
             color: #fff;
         }
-        .team-card .status {
-            font-size: 11px;
-            color: #2ecc71;
-            margin-top: 6px;
-        }
-        .team-card .status i {
-            font-size: 9px;
-        }
 
-        .video-grid {
+        /* ===== CONTENT GRID ===== */
+        .content-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
         }
-        .video-card {
+
+        .content-card {
             background: rgba(20, 26, 43, 0.7);
             border-radius: 14px;
             overflow: hidden;
             border: 1px solid rgba(108, 92, 231, 0.1);
             transition: 0.3s;
         }
-        .video-card:hover {
+
+        .content-card:hover {
             border-color: #6c5ce7;
         }
-        .video-card .video-wrapper {
+
+        .content-card .thumbnail {
             position: relative;
             padding-bottom: 56.25%;
             height: 0;
             background: #000;
         }
-        .video-card .video-wrapper video,
-        .video-card .video-wrapper iframe {
+
+        .content-card .thumbnail video,
+        .content-card .thumbnail iframe {
             position: absolute;
             top: 0;
             left: 0;
@@ -318,159 +390,112 @@
             height: 100%;
             border: none;
         }
-        .video-card .video-info {
+
+        .content-card .thumbnail .type-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(108, 92, 231, 0.9);
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .content-card .info {
             padding: 12px 14px;
         }
-        .video-card .video-info h4 {
+
+        .content-card .info h4 {
             font-size: 14px;
         }
-        .video-card .video-info .meta {
+
+        .content-card .info .meta {
             display: flex;
             justify-content: space-between;
             color: #8892b0;
-            font-size: 12px;
+            font-size: 11px;
             margin-top: 4px;
         }
 
-        .chat-container {
+        .content-card .info .meta .date {
+            color: #6c5ce7;
+        }
+
+        .content-card .info .actions {
             display: flex;
-            gap: 20px;
+            gap: 6px;
+            margin-top: 8px;
             flex-wrap: wrap;
         }
-        .chat-box {
-            flex: 2;
-            min-width: 280px;
-            background: rgba(20, 26, 43, 0.6);
-            border-radius: 16px;
-            border: 1px solid rgba(108, 92, 231, 0.1);
-            display: flex;
-            flex-direction: column;
-            height: 380px;
+
+        .content-card .info .actions button {
+            padding: 3px 12px;
+            font-size: 11px;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+            transition: 0.3s;
+            font-family: inherit;
         }
-        .chat-box .chat-header {
-            padding: 12px 18px;
-            border-bottom: 1px solid rgba(108, 92, 231, 0.1);
+
+        /* ===== NEWS CARD ===== */
+        .news-card {
+            background: rgba(20, 26, 43, 0.7);
+            border-radius: 14px;
+            padding: 16px 18px;
+            border: 1px solid rgba(108, 92, 231, 0.1);
+            transition: 0.3s;
+            margin-bottom: 12px;
+        }
+
+        .news-card:hover {
+            border-color: #6c5ce7;
+        }
+
+        .news-card .news-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-        .chat-box .chat-header .online-count {
-            color: #2ecc71;
-            font-size: 12px;
-        }
-        .chat-box .chat-messages {
-            flex: 1;
-            padding: 14px 18px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-        .chat-box .chat-messages .msg {
-            padding: 7px 12px;
-            border-radius: 12px;
-            max-width: 80%;
-            word-wrap: break-word;
-            animation: fadeIn 0.3s;
-        }
-        .chat-box .chat-messages .msg.me {
-            background: #6c5ce7;
-            align-self: flex-end;
-            border-bottom-left-radius: 4px;
-        }
-        .chat-box .chat-messages .msg.other {
-            background: rgba(255, 255, 255, 0.06);
-            align-self: flex-start;
-            border-bottom-right-radius: 4px;
-        }
-        .chat-box .chat-messages .msg .msg-user {
-            font-size: 10px;
-            font-weight: 700;
-            color: #a29bfe;
-        }
-        .chat-box .chat-messages .msg .msg-text {
-            font-size: 13px;
-        }
-        .chat-box .chat-messages .msg .msg-time {
-            font-size: 9px;
-            color: #8892b0;
-            margin-top: 2px;
-            text-align: left;
-        }
-        .chat-box .chat-input {
-            padding: 10px 14px;
-            border-top: 1px solid rgba(108, 92, 231, 0.1);
-            display: flex;
+            flex-wrap: wrap;
             gap: 8px;
         }
-        .chat-box .chat-input input {
-            flex: 1;
-            padding: 8px 14px;
-            border-radius: 30px;
-            border: 1px solid rgba(108, 92, 231, 0.2);
-            background: rgba(255, 255, 255, 0.05);
-            color: #e4e6f0;
-            outline: none;
-            font-family: inherit;
-            font-size: 13px;
-        }
-        .chat-box .chat-input input::placeholder {
-            color: #8892b0;
-        }
-        .chat-box .chat-input button {
-            padding: 8px 18px;
-            border-radius: 30px;
-            border: none;
-            background: #6c5ce7;
-            color: #fff;
-            font-weight: 700;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .chat-box .chat-input button:hover {
-            background: #5a4bd1;
+
+        .news-card .news-header h4 {
+            font-size: 15px;
+            color: #a29bfe;
         }
 
-        .online-list {
-            flex: 1;
-            min-width: 160px;
-            background: rgba(20, 26, 43, 0.6);
-            border-radius: 16px;
-            border: 1px solid rgba(108, 92, 231, 0.1);
-            padding: 14px 18px;
+        .news-card .news-header .date {
+            font-size: 11px;
+            color: #8892b0;
         }
-        .online-list h4 {
+
+        .news-card .news-body {
             font-size: 14px;
-            margin-bottom: 10px;
-            color: #a29bfe;
-        }
-        .online-list .online-user {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 4px 0;
-            font-size: 13px;
-        }
-        .online-list .online-user i {
-            color: #2ecc71;
-            font-size: 9px;
-        }
-        .online-list .online-user .role-badge-small {
-            font-size: 9px;
-            padding: 1px 8px;
-            border-radius: 20px;
-            background: #6c5ce7;
-            color: #fff;
-        }
-        .online-list .online-user .role-badge-small.owner {
-            background: #f1c40f;
-            color: #000;
-        }
-        .online-list .online-user .role-badge-small.admin {
-            background: #3498db;
+            color: #c8d0e0;
+            margin: 6px 0 8px;
+            line-height: 1.7;
         }
 
-        /* MODAL */
+        .news-card .news-actions {
+            display: flex;
+            gap: 6px;
+        }
+
+        .news-card .news-actions button {
+            padding: 2px 12px;
+            font-size: 11px;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+            transition: 0.3s;
+            font-family: inherit;
+        }
+
+        /* ===== MODAL ===== */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -484,24 +509,44 @@
             justify-content: center;
             align-items: center;
         }
+
         .modal-overlay.active {
             display: flex;
         }
+
         .modal {
             background: #1a1f35;
             border-radius: 20px;
             padding: 35px;
-            max-width: 400px;
+            max-width: 500px;
             width: 92%;
             border: 1px solid rgba(108, 92, 231, 0.2);
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+            max-height: 90vh;
+            overflow-y: auto;
         }
+
         .modal h2 {
             text-align: center;
             margin-bottom: 18px;
             font-size: 22px;
         }
-        .modal input {
+
+        .modal h2 i {
+            color: #6c5ce7;
+        }
+
+        .modal label {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: #a29bfe;
+        }
+
+        .modal input,
+        .modal select,
+        .modal textarea {
             width: 100%;
             padding: 10px 14px;
             border-radius: 10px;
@@ -510,17 +555,30 @@
             color: #e4e6f0;
             outline: none;
             font-family: inherit;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             font-size: 14px;
         }
-        .modal input::placeholder {
+
+        .modal textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        .modal input::placeholder,
+        .modal textarea::placeholder {
             color: #8892b0;
         }
+
+        .modal select option {
+            background: #1a1f35;
+        }
+
         .modal .modal-buttons {
             display: flex;
             gap: 8px;
             margin-top: 6px;
         }
+
         .modal .modal-buttons button {
             flex: 1;
             padding: 10px;
@@ -531,6 +589,7 @@
             transition: 0.3s;
             font-family: inherit;
         }
+
         .modal .error-msg {
             color: #e74c3c;
             font-size: 12px;
@@ -538,59 +597,40 @@
             margin-top: 6px;
             min-height: 18px;
         }
-        .modal .switch-link {
-            text-align: center;
-            margin-top: 10px;
-            font-size: 12px;
-            color: #8892b0;
-        }
-        .modal .switch-link a {
-            color: #6c5ce7;
-            cursor: pointer;
-            text-decoration: none;
-        }
-        .modal .switch-link a:hover {
-            text-decoration: underline;
-        }
 
+        /* ===== FOOTER ===== */
         footer {
             border-top: 1px solid rgba(108, 92, 231, 0.1);
-            padding: 25px 30px 16px;
+            padding: 20px 30px 14px;
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 10px;
             background: rgba(10, 13, 26, 0.8);
         }
+
         footer .copy {
             color: #8892b0;
             font-size: 12px;
         }
+
         footer .socials {
             display: flex;
             gap: 14px;
             font-size: 16px;
         }
+
         footer .socials a {
             color: #8892b0;
             transition: 0.3s;
             cursor: pointer;
         }
+
         footer .socials a:hover {
             color: #a29bfe;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(8px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             header {
                 padding: 10px 16px;
@@ -598,72 +638,75 @@
                 align-items: stretch;
                 text-align: center;
             }
+
             .nav-links {
                 justify-content: center;
                 gap: 12px;
-                font-size: 13px;
+                font-size: 12px;
             }
+
             .user-info {
                 justify-content: center;
             }
+
             .hero h1 {
-                font-size: 28px;
+                font-size: 26px;
             }
+
             .section {
-                padding: 24px 14px;
+                padding: 20px 14px;
             }
+
             .stats {
                 gap: 18px;
             }
-            .chat-container {
-                flex-direction: column;
+
+            .content-grid {
+                grid-template-columns: 1fr;
             }
-            .chat-box {
-                height: 280px;
-                min-width: unset;
-            }
-            .online-list {
-                min-width: unset;
-            }
-            footer {
-                flex-direction: column;
-                text-align: center;
-            }
-            footer .socials {
-                justify-content: center;
+
+            .modal {
+                padding: 20px;
             }
         }
+
         @media (max-width: 480px) {
             .hero h1 {
-                font-size: 22px;
+                font-size: 20px;
             }
+
             .team-grid {
                 grid-template-columns: 1fr 1fr;
             }
-            .video-grid {
-                grid-template-columns: 1fr;
+
+            .section-title {
+                font-size: 18px;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 8px;
             }
-            .modal {
-                padding: 20px;
+
+            .section-title .actions {
+                justify-content: center;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER -->
+    <!-- ===== HEADER ===== -->
     <header>
         <div class="logo"><i class="fas fa-crown"></i> GM Kids</div>
         <div class="nav-links">
-            <a href="#" class="active" onclick="scrollToTop()">خانه</a>
-            <a href="#" onclick="document.getElementById('team').scrollIntoView({behavior:'smooth'})">اعضا</a>
-            <a href="#" onclick="document.getElementById('videos').scrollIntoView({behavior:'smooth'})">ویدیوها</a>
-            <a href="#" onclick="document.getElementById('chat').scrollIntoView({behavior:'smooth'})">چت</a>
+            <a href="#" class="active" onclick="showSection('home')">خانه</a>
+            <a href="#" onclick="showSection('team')">اعضا</a>
+            <a href="#" onclick="showSection('videos')">ویدیوها</a>
+            <a href="#" onclick="showSection('news')">اخبار</a>
+            <a href="#" id="adminLink" style="display:none;" onclick="showSection('admin')">پنل مدیریت</a>
         </div>
         <div class="user-info">
             <div id="authButtons">
-                <button class="btn btn-primary" onclick="openModal('login')"><i class="fas fa-sign-in-alt"></i> ورود</button>
-                <button class="btn btn-outline" onclick="openModal('register')"><i class="fas fa-user-plus"></i> ثبت‌نام</button>
+                <button class="btn btn-primary" onclick="openLoginModal()"><i class="fas fa-sign-in-alt"></i> ورود</button>
             </div>
             <div id="userPanel" style="display:none; align-items:center; gap:10px;">
                 <div class="avatar" id="userAvatar">ب</div>
@@ -674,57 +717,93 @@
         </div>
     </header>
 
-    <!-- HERO -->
-    <section class="hero">
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="heroSection">
         <div class="tagline"><i class="fas fa-shield-alt"></i> تیم رسمی GM Kids</div>
         <h1>به خانواده <span>GM Kids</span> خوش اومدی</h1>
-        <p>ما ۶ نفریم، اما یه تیم واقعی هستیم! 🎮</p>
+        <p id="heroText">ما ۶ نفریم، اما یه تیم واقعی هستیم! 🎮</p>
         <p style="font-size:13px; color:#6c5ce7;">باراد (Owner) • امیر و اهورا (Admin) • احسان، یاسین، ماهان (Member)</p>
     </section>
 
-    <!-- STATS -->
+    <!-- ===== STATS ===== -->
     <div class="stats">
-        <div class="stat-item"><div class="number">۶</div><div class="label">اعضای تیم</div></div>
-        <div class="stat-item"><div class="number">۱</div><div class="label">Owner</div></div>
-        <div class="stat-item"><div class="number">۲</div><div class="label">Admin</div></div>
-        <div class="stat-item"><div class="number">۳</div><div class="label">Member</div></div>
+        <div class="stat-item"><div class="number" id="statMembers">۶</div><div class="label">اعضای تیم</div></div>
+        <div class="stat-item"><div class="number" id="statVideos">۰</div><div class="label">ویدیوها</div></div>
+        <div class="stat-item"><div class="number" id="statNews">۰</div><div class="label">اخبار</div></div>
+        <div class="stat-item"><div class="number" id="statAdmins">۳</div><div class="label">مدیران</div></div>
     </div>
 
-    <!-- TEAM -->
-    <section class="section" id="team">
+    <!-- ===== HOME SECTION ===== -->
+    <div id="homeSection">
+        <!-- Videos -->
+        <section class="section" id="videos">
+            <div class="section-title">
+                <span><i class="fas fa-video"></i> ویدیوهای تیم</span>
+                <div class="actions">
+                    <button class="btn btn-success btn-sm" id="addVideoBtn" style="display:none;" onclick="openVideoModal()">
+                        <i class="fas fa-plus"></i> ویدیو جدید
+                    </button>
+                </div>
+            </div>
+            <div class="content-grid" id="videoGrid"></div>
+        </section>
+
+        <!-- News -->
+        <section class="section" id="news">
+            <div class="section-title">
+                <span><i class="fas fa-newspaper"></i> آخرین اخبار</span>
+                <div class="actions">
+                    <button class="btn btn-success btn-sm" id="addNewsBtn" style="display:none;" onclick="openNewsModal()">
+                        <i class="fas fa-plus"></i> خبر جدید
+                    </button>
+                </div>
+            </div>
+            <div id="newsContainer"></div>
+        </section>
+    </div>
+
+    <!-- ===== TEAM SECTION ===== -->
+    <section class="section" id="teamSection" style="display:none;">
         <div class="section-title"><i class="fas fa-users"></i> اعضای تیم GM Kids</div>
         <div class="team-grid" id="teamGrid"></div>
     </section>
 
-    <!-- VIDEOS -->
-    <section class="section" id="videos">
-        <div class="section-title"><i class="fas fa-video"></i> ویدیوهای تیم</div>
-        <div class="video-grid" id="videoGrid"></div>
-    </section>
+    <!-- ===== ADMIN SECTION ===== -->
+    <section class="section" id="adminSection" style="display:none;">
+        <div class="section-title"><i class="fas fa-cog"></i> پنل مدیریت</div>
 
-    <!-- CHAT -->
-    <section class="section" id="chat">
-        <div class="section-title"><i class="fas fa-comments"></i> چت گروهی</div>
-        <div class="chat-container">
-            <div class="chat-box">
-                <div class="chat-header">
-                    <span><i class="fas fa-circle" style="color:#2ecc71; font-size:10px;"></i> چت زنده</span>
-                    <span class="online-count"><i class="fas fa-user"></i> <span id="onlineCount">۶</span> آنلاین</span>
-                </div>
-                <div class="chat-messages" id="chatMessages"></div>
-                <div class="chat-input">
-                    <input type="text" id="chatInput" placeholder="پیامت رو بفرست داداش..." onkeydown="if(event.key==='Enter') sendMessage()" />
-                    <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
-                </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:16px; margin-bottom:24px;">
+            <div style="background:rgba(20,26,43,0.7); border-radius:14px; padding:16px; text-align:center; border:1px solid rgba(108,92,231,0.1);">
+                <i class="fas fa-video" style="font-size:28px; color:#6c5ce7;"></i>
+                <h3 style="margin:6px 0;" id="adminVideoCount">۰</h3>
+                <p style="color:#8892b0; font-size:12px;">تعداد ویدیوها</p>
             </div>
-            <div class="online-list">
-                <h4><i class="fas fa-circle" style="color:#2ecc71; font-size:9px;"></i> آنلاین‌ها</h4>
-                <div id="onlineList"></div>
+            <div style="background:rgba(20,26,43,0.7); border-radius:14px; padding:16px; text-align:center; border:1px solid rgba(108,92,231,0.1);">
+                <i class="fas fa-newspaper" style="font-size:28px; color:#2ecc71;"></i>
+                <h3 style="margin:6px 0;" id="adminNewsCount">۰</h3>
+                <p style="color:#8892b0; font-size:12px;">تعداد اخبار</p>
             </div>
+            <div style="background:rgba(20,26,43,0.7); border-radius:14px; padding:16px; text-align:center; border:1px solid rgba(108,92,231,0.1);">
+                <i class="fas fa-users" style="font-size:28px; color:#f1c40f;"></i>
+                <h3 style="margin:6px 0;" id="adminMembersCount">۶</h3>
+                <p style="color:#8892b0; font-size:12px;">تعداد اعضا</p>
+            </div>
+        </div>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px;">
+            <button class="btn btn-success" onclick="openVideoModal()"><i class="fas fa-plus"></i> افزودن ویدیو</button>
+            <button class="btn btn-success" onclick="openNewsModal()"><i class="fas fa-plus"></i> افزودن خبر</button>
+            <button class="btn btn-danger" onclick="clearAllData()"><i class="fas fa-trash"></i> پاک کردن همه</button>
+        </div>
+
+        <div style="background:rgba(20,26,43,0.4); border-radius:14px; padding:16px; border:1px solid rgba(108,92,231,0.1);">
+            <h4 style="color:#a29bfe; margin-bottom:10px;"><i class="fas fa-code"></i> کدهای دسترسی</h4>
+            <p style="font-size:13px; color:#8892b0;">👑 Owner: <span style="color:#f1c40f; font-weight:700;">GM2026</span></p>
+            <p style="font-size:13px; color:#8892b0;">🛡️ Admin: <span style="color:#3498db; font-weight:700;">GMADMIN</span></p>
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- ===== FOOTER ===== -->
     <footer>
         <div class="copy"><i class="fas fa-crown" style="color:#f1c40f;"></i> GM Kids Gaming &copy; ۲۰۲۶ – تیم ما، افتخار ما</div>
         <div class="socials">
@@ -735,21 +814,56 @@
         </div>
     </footer>
 
-    <!-- MODAL -->
-    <div class="modal-overlay" id="modalOverlay">
+    <!-- ===== LOGIN MODAL ===== -->
+    <div class="modal-overlay" id="loginModal">
         <div class="modal">
-            <h2 id="modalTitle">🔑 ورود به حساب</h2>
-            <input type="text" id="modalName" placeholder="نام کاربری" />
-            <input type="text" id="modalCode" placeholder="کد (فقط برای ادمین/اونر)" />
+            <h2><i class="fas fa-key"></i> ورود به پنل مدیریت</h2>
+            <label>نام کاربری</label>
+            <input type="text" id="loginName" placeholder="نام خود را وارد کنید" />
+            <label>کد دسترسی</label>
+            <input type="text" id="loginCode" placeholder="کد Owner یا Admin" />
             <div class="modal-buttons">
-                <button class="btn btn-primary" id="modalActionBtn" onclick="handleModalAction()">ورود</button>
-                <button class="btn btn-outline" onclick="closeModal()">لغو</button>
+                <button class="btn btn-primary" onclick="handleLogin()">ورود</button>
+                <button class="btn btn-outline" onclick="closeLoginModal()">لغو</button>
             </div>
-            <div class="error-msg" id="modalError"></div>
-            <div class="switch-link">
-                <span id="modalSwitchText">عضو نیستی؟</span>
-                <a id="modalSwitchLink" onclick="switchModalMode()">ثبت‌نام کن</a>
+            <div class="error-msg" id="loginError"></div>
+        </div>
+    </div>
+
+    <!-- ===== VIDEO MODAL ===== -->
+    <div class="modal-overlay" id="videoModal">
+        <div class="modal">
+            <h2><i class="fas fa-video"></i> افزودن ویدیو جدید</h2>
+            <label>عنوان ویدیو</label>
+            <input type="text" id="videoTitle" placeholder="عنوان ویدیو..." />
+            <label>لینک ویدیو</label>
+            <input type="text" id="videoLink" placeholder="لینک YouTube یا فایل ویدیو..." />
+            <label>نوع ویدیو</label>
+            <select id="videoType">
+                <option value="youtube">YouTube</option>
+                <option value="video">فایل ویدیو</option>
+            </select>
+            <div class="modal-buttons">
+                <button class="btn btn-success" onclick="addVideo()">افزودن ویدیو</button>
+                <button class="btn btn-outline" onclick="closeVideoModal()">لغو</button>
             </div>
+            <div class="error-msg" id="videoError"></div>
+        </div>
+    </div>
+
+    <!-- ===== NEWS MODAL ===== -->
+    <div class="modal-overlay" id="newsModal">
+        <div class="modal">
+            <h2><i class="fas fa-newspaper"></i> افزودن خبر جدید</h2>
+            <label>عنوان خبر</label>
+            <input type="text" id="newsTitle" placeholder="عنوان خبر..." />
+            <label>متن خبر</label>
+            <textarea id="newsBody" placeholder="متن خبر را بنویسید..."></textarea>
+            <div class="modal-buttons">
+                <button class="btn btn-success" onclick="addNews()">افزودن خبر</button>
+                <button class="btn btn-outline" onclick="closeNewsModal()">لغو</button>
+            </div>
+            <div class="error-msg" id="newsError"></div>
         </div>
     </div>
 
@@ -778,9 +892,11 @@
 
         let currentUser = null;
         let currentRole = null;
-        let messages = [];
-        let modalMode = 'login';
         let allMembers = [];
+        let videos = [];
+        let news = [];
+        let editingVideoId = null;
+        let editingNewsId = null;
 
         // ============================================================
         // ===== INIT =====
@@ -800,8 +916,29 @@
                 localStorage.setItem('gmMembers', JSON.stringify(allMembers));
             }
 
-            renderTeam();
-            renderVideos();
+            // Load videos
+            const savedVideos = localStorage.getItem('gmVideos');
+            if (savedVideos) {
+                try {
+                    videos = JSON.parse(savedVideos);
+                } catch (e) {
+                    videos = getDefaultVideos();
+                }
+            } else {
+                videos = getDefaultVideos();
+            }
+
+            // Load news
+            const savedNews = localStorage.getItem('gmNews');
+            if (savedNews) {
+                try {
+                    news = JSON.parse(savedNews);
+                } catch (e) {
+                    news = getDefaultNews();
+                }
+            } else {
+                news = getDefaultNews();
+            }
 
             // Load user
             const savedUser = localStorage.getItem('gmUser');
@@ -816,41 +953,47 @@
                 }
             }
 
-            // Load messages
-            const savedMessages = localStorage.getItem('gmMessages');
-            if (savedMessages) {
-                try {
-                    messages = JSON.parse(savedMessages);
-                } catch (e) {
-                    messages = getDefaultMessages();
-                }
-            } else {
-                messages = getDefaultMessages();
-            }
-            renderChat();
-            updateOnlineList();
+            renderAll();
 
             console.log('🎮 GM Kids loaded!');
             console.log('👑 Owner code: GM2026');
             console.log('🛡️ Admin code: GMADMIN');
         }
 
-        function getDefaultMessages() {
-            const now = getCurrentTime();
+        function getDefaultVideos() {
             return [
-                { user: '🎮 سیستم', text: 'به چت GM Kids خوش اومدی داداش! 🚀', time: now },
-                { user: 'باراد', text: 'سلام به همه! تیم ما بهترینه 💪', time: now },
-                { user: 'امیر', text: 'داداش‌ها امشب بازی می‌زنیم؟', time: now },
+                { id: 1, title: '🎮 کلیپ گیمینگ GM Kids', link: 'https://www.w3schools.com/html/mov_bbb.mp4', type: 'video',
+                    uploader: 'باراد', date: '۱۴۰۵/۰۶/۰۱' },
+                { id: 2, title: '⚽ گل زیبا در فیفا', link: 'https://www.w3schools.com/html/mov_bbb.mp4', type: 'video',
+                    uploader: 'امیر', date: '۱۴۰۵/۰۶/۰۲' },
+                { id: 3, title: '🎬 تریلر بازی جدید', link: 'https://www.youtube.com/embed/dQw4w9WgXcQ', type: 'youtube',
+                    uploader: 'اهورا', date: '۱۴۰۵/۰۶/۰۳' }
             ];
         }
 
-        function getCurrentTime() {
-            return new Date().toLocaleTimeString('fa-IR', { hour: '2-digit', minute: '2-digit' });
+        function getDefaultNews() {
+            return [
+                { id: 1, title: '🎉 شروع فصل جدید مسابقات', body: 'فصل جدید مسابقات GM Kids از هفته آینده شروع میشه! همه آماده باشین.', author: 'باراد',
+                    date: '۱۴۰۵/۰۶/۰۱' },
+                { id: 2, title: '🆕 آپدیت جدید سرور ماینکرفت', body: 'سرور ماینکرفت با مودهای جدید آپدیت شد. منتظرتونیم!', author: 'امیر',
+                    date: '۱۴۰۵/۰۶/۰۲' },
+                { id: 3, title: '🎮 تورنمنت روبلاکس', body: 'تورنمنت روبلاکس این جمعه برگزار میشه. ثبت‌نام آزاد!', author: 'اهورا',
+                    date: '۱۴۰۵/۰۶/۰۳' }
+            ];
         }
 
         // ============================================================
         // ===== RENDER =====
         // ============================================================
+
+        function renderAll() {
+            renderTeam();
+            renderVideos();
+            renderNews();
+            renderStats();
+            renderAdminStats();
+            updateUIForUser();
+        }
 
         function renderTeam() {
             const grid = document.getElementById('teamGrid');
@@ -861,212 +1004,153 @@
                     <span class="role-tag ${m.role}">
                         ${m.role === 'owner' ? '👑 Owner' : m.role === 'admin' ? '🛡️ Admin' : '⭐ Member'}
                     </span>
-                    <div class="status"><i class="fas fa-circle"></i> آنلاین</div>
                 </div>
             `).join('');
         }
 
         function renderVideos() {
             const grid = document.getElementById('videoGrid');
-            const videos = [
-                { id: 1, title: '🎮 کلیپ گیمینگ GM Kids - قسمت اول', uploader: 'باراد', url: 'https://www.w3schools.com/html/mov_bbb.mp4', type: 'video' },
-                { id: 2, title: '⚽ گل زیبا در فیفا - امیر', uploader: 'امیر', url: 'https://www.w3schools.com/html/mov_bbb.mp4', type: 'video' },
-                { id: 3, title: '🎬 تریلر بازی جدید - اهورا', uploader: 'اهورا', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ', type: 'youtube' }
-            ];
-
-            grid.innerHTML = videos.map(v => `
-                <div class="video-card">
-                    <div class="video-wrapper">
-                        ${v.type === 'youtube'
-                            ? `<iframe src="${v.url}" allowfullscreen></iframe>`
-                            : `<video controls><source src="${v.url}" type="video/mp4"></video>`
-                        }
-                    </div>
-                    <div class="video-info">
-                        <h4>${v.title}</h4>
-                        <div class="meta">
-                            <span>👤 ${v.uploader}</span>
-                            <span><i class="fas fa-eye"></i> ${Math.floor(Math.random() * 50) + 10} بازدید</span>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function renderChat() {
-            const container = document.getElementById('chatMessages');
-            if (messages.length === 0) {
-                container.innerHTML = `<div style="text-align:center; color:#8892b0; padding:20px; font-size:14px;">هنوز پیامی نیست!</div>`;
+            if (videos.length === 0) {
+                grid.innerHTML =
+                    `<div style="text-align:center; padding:30px; color:#8892b0; grid-column:1/-1;">هنوز ویدیویی وجود نداره داداش!</div>`;
                 return;
             }
-            container.innerHTML = messages.map(msg => {
-                const isMe = msg.user === currentUser;
-                return `
-                    <div class="msg ${isMe ? 'me' : 'other'}">
-                        <div class="msg-user">${msg.user}</div>
-                        <div class="msg-text">${msg.text}</div>
-                        <div class="msg-time">${msg.time}</div>
+
+            grid.innerHTML = videos.map(v => `
+                <div class="content-card">
+                    <div class="thumbnail">
+                        ${v.type === 'youtube'
+                            ? `<iframe src="${v.link}" allowfullscreen></iframe>`
+                            : `<video controls><source src="${v.link}" type="video/mp4"></video>`
+                        }
+                        <span class="type-badge">${v.type === 'youtube' ? '🎬 YouTube' : '🎥 ویدیو'}</span>
                     </div>
-                `;
-            }).join('');
-            container.scrollTop = container.scrollHeight;
-        }
-
-        function updateOnlineList() {
-            const container = document.getElementById('onlineList');
-            const countSpan = document.getElementById('onlineCount');
-
-            let users = allMembers.map(m => ({ name: m.name, role: m.role }));
-
-            if (currentUser && !users.find(u => u.name === currentUser)) {
-                users.push({ name: currentUser, role: currentRole || 'member' });
-            }
-
-            container.innerHTML = users.map(u => `
-                <div class="online-user">
-                    <i class="fas fa-circle"></i>
-                    ${u.name}
-                    ${u.role ? `<span class="role-badge-small ${u.role}">${u.role === 'owner' ? '👑' : u.role === 'admin' ? '🛡️' : '⭐'}</span>` : ''}
-                    ${u.name === currentUser ? ' (شما)' : ''}
+                    <div class="info">
+                        <h4>${v.title}</h4>
+                        <div class="meta">
+                            <span>👤 ${v.uploader || 'سیستم'}</span>
+                            <span class="date">📅 ${v.date || 'امروز'}</span>
+                        </div>
+                        ${isAdmin() ? `
+                        <div class="actions">
+                            <button class="btn btn-danger btn-sm" onclick="deleteVideo(${v.id})">🗑️ حذف</button>
+                        </div>
+                        ` : ''}
+                    </div>
                 </div>
             `).join('');
-
-            countSpan.textContent = users.length;
         }
 
-        // ============================================================
-        // ===== CHAT =====
-        // ============================================================
-
-        function sendMessage() {
-            const input = document.getElementById('chatInput');
-            const text = input.value.trim();
-            if (!text) { alert('داداش یه چیزی بنویس!'); return; }
-            if (!currentUser) { alert('داداش اول وارد شو!'); return; }
-
-            messages.push({
-                user: currentUser,
-                text: text,
-                time: getCurrentTime()
-            });
-
-            localStorage.setItem('gmMessages', JSON.stringify(messages));
-            renderChat();
-            input.value = '';
-        }
-
-        // ============================================================
-        // ===== MODAL =====
-        // ============================================================
-
-        function openModal(mode) {
-            modalMode = mode;
-            const overlay = document.getElementById('modalOverlay');
-            const title = document.getElementById('modalTitle');
-            const btn = document.getElementById('modalActionBtn');
-            const error = document.getElementById('modalError');
-            const switchText = document.getElementById('modalSwitchText');
-            const switchLink = document.getElementById('modalSwitchLink');
-            const codeInput = document.getElementById('modalCode');
-
-            error.textContent = '';
-            document.getElementById('modalName').value = '';
-            document.getElementById('modalCode').value = '';
-
-            if (mode === 'login') {
-                title.textContent = '🔑 ورود به حساب';
-                btn.textContent = 'ورود';
-                switchText.textContent = 'عضو نیستی؟';
-                switchLink.textContent = 'ثبت‌نام کن';
-                codeInput.placeholder = 'کد (فقط برای ادمین/اونر)';
-            } else {
-                title.textContent = '📝 ثبت‌نام جدید';
-                btn.textContent = 'ثبت‌نام';
-                switchText.textContent = 'حساب داری؟';
-                switchLink.textContent = 'وارد شو';
-                codeInput.placeholder = 'کد ادمین/اونر (اختیاری)';
+        function renderNews() {
+            const container = document.getElementById('newsContainer');
+            if (news.length === 0) {
+                container.innerHTML =
+                    `<div style="text-align:center; padding:30px; color:#8892b0;">هنوز خبری وجود نداره داداش!</div>`;
+                return;
             }
 
-            overlay.classList.add('active');
+            container.innerHTML = news.map(n => `
+                <div class="news-card">
+                    <div class="news-header">
+                        <h4>${n.title}</h4>
+                        <span class="date">📅 ${n.date || 'امروز'} • 👤 ${n.author || 'سیستم'}</span>
+                    </div>
+                    <div class="news-body">${n.body}</div>
+                    ${isAdmin() ? `
+                    <div class="news-actions">
+                        <button class="btn btn-danger btn-sm" onclick="deleteNews(${n.id})">🗑️ حذف</button>
+                    </div>
+                    ` : ''}
+                </div>
+            `).join('');
         }
 
-        function closeModal() {
-            document.getElementById('modalOverlay').classList.remove('active');
-            document.getElementById('modalError').textContent = '';
+        function renderStats() {
+            document.getElementById('statMembers').textContent = allMembers.length;
+            document.getElementById('statVideos').textContent = videos.length;
+            document.getElementById('statNews').textContent = news.length;
+            const admins = allMembers.filter(m => m.role === 'owner' || m.role === 'admin').length;
+            document.getElementById('statAdmins').textContent = admins;
         }
 
-        function switchModalMode() {
-            closeModal();
-            setTimeout(() => {
-                openModal(modalMode === 'login' ? 'register' : 'login');
-            }, 300);
+        function renderAdminStats() {
+            document.getElementById('adminVideoCount').textContent = videos.length;
+            document.getElementById('adminNewsCount').textContent = news.length;
+            document.getElementById('adminMembersCount').textContent = allMembers.length;
         }
 
-        function handleModalAction() {
-            const name = document.getElementById('modalName').value.trim();
-            const code = document.getElementById('modalCode').value.trim();
-            const error = document.getElementById('modalError');
+        // ============================================================
+        // ===== NAVIGATION =====
+        // ============================================================
+
+        function showSection(section) {
+            document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+
+            document.getElementById('homeSection').style.display = 'none';
+            document.getElementById('teamSection').style.display = 'none';
+            document.getElementById('adminSection').style.display = 'none';
+
+            if (section === 'home') {
+                document.getElementById('homeSection').style.display = 'block';
+                document.querySelector('.nav-links a:first-child').classList.add('active');
+                document.getElementById('heroSection').style.display = 'block';
+            } else if (section === 'team') {
+                document.getElementById('teamSection').style.display = 'block';
+                document.querySelector('.nav-links a:nth-child(2)').classList.add('active');
+                document.getElementById('heroSection').style.display = 'none';
+            } else if (section === 'admin') {
+                document.getElementById('adminSection').style.display = 'block';
+                document.querySelector('.nav-links a:nth-child(5)').classList.add('active');
+                document.getElementById('heroSection').style.display = 'none';
+                renderAdminStats();
+            } else {
+                document.getElementById('homeSection').style.display = 'block';
+                document.getElementById('heroSection').style.display = 'block';
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ============================================================
+        // ===== AUTH =====
+        // ============================================================
+
+        function isAdmin() {
+            return currentRole === 'owner' || currentRole === 'admin';
+        }
+
+        function openLoginModal() {
+            document.getElementById('loginModal').classList.add('active');
+            document.getElementById('loginError').textContent = '';
+            document.getElementById('loginName').value = '';
+            document.getElementById('loginCode').value = '';
+        }
+
+        function closeLoginModal() {
+            document.getElementById('loginModal').classList.remove('active');
+        }
+
+        function handleLogin() {
+            const name = document.getElementById('loginName').value.trim();
+            const code = document.getElementById('loginCode').value.trim();
+            const error = document.getElementById('loginError');
 
             if (!name) {
                 error.textContent = 'داداش اسمت رو بنویس!';
                 return;
             }
 
-            const existingMember = allMembers.find(m => m.name === name);
-
-            // ===== REGISTER =====
-            if (modalMode === 'register') {
-                if (existingMember) {
-                    error.textContent = 'این اسم قبلاً ثبت شده داداش!';
-                    return;
-                }
-
-                let role = 'member';
-                if (code === CODES.owner) {
-                    role = 'owner';
-                } else if (code === CODES.admin) {
-                    role = 'admin';
-                } else if (code && code !== '') {
-                    error.textContent = 'کد اشتباهه داداش!';
-                    return;
-                }
-
-                // Add new member
-                const newMember = { name, role, emoji: '⭐' };
-                allMembers.push(newMember);
-                localStorage.setItem('gmMembers', JSON.stringify(allMembers));
-                renderTeam();
-
-                // Login
-                currentUser = name;
-                currentRole = role;
-                localStorage.setItem('gmUser', JSON.stringify({ name, role }));
-                updateUIForUser();
-                updateOnlineList();
-                closeModal();
-
-                messages.push({
-                    user: '🎮 سیستم',
-                    text: `${name} به تیم پیوست داداش! 🎉`,
-                    time: getCurrentTime()
-                });
-                localStorage.setItem('gmMessages', JSON.stringify(messages));
-                renderChat();
+            const member = allMembers.find(m => m.name === name);
+            if (!member) {
+                error.textContent = 'این کاربر وجود نداره داداش!';
                 return;
             }
 
-            // ===== LOGIN =====
-            if (!existingMember) {
-                error.textContent = 'این کاربر وجود نداره! اول ثبت‌نام کن.';
-                return;
-            }
-
-            // Check code for owner/admin
-            if (existingMember.role === 'owner' && code !== CODES.owner && code !== '') {
+            if (member.role === 'owner' && code !== CODES.owner) {
                 error.textContent = 'کد Owner اشتباهه!';
                 return;
             }
-            if (existingMember.role === 'admin' && code !== CODES.admin && code !== '') {
+            if (member.role === 'admin' && code !== CODES.admin) {
                 error.textContent = 'کد Admin اشتباهه!';
                 return;
             }
@@ -1075,26 +1159,22 @@
                 return;
             }
 
-            // Login
             currentUser = name;
-            currentRole = existingMember.role;
+            currentRole = member.role;
             localStorage.setItem('gmUser', JSON.stringify({ name, role: currentRole }));
             updateUIForUser();
-            updateOnlineList();
-            closeModal();
-
-            messages.push({
-                user: '🎮 سیستم',
-                text: `${name} وارد شد داداش! 🚀`,
-                time: getCurrentTime()
-            });
-            localStorage.setItem('gmMessages', JSON.stringify(messages));
-            renderChat();
+            closeLoginModal();
+            renderAll();
         }
 
-        // ============================================================
-        // ===== UI =====
-        // ============================================================
+        function logout() {
+            if (!confirm('مطمئنی میخوای خارج شی داداش؟')) return;
+            currentUser = null;
+            currentRole = null;
+            localStorage.removeItem('gmUser');
+            updateUIForUser();
+            renderAll();
+        }
 
         function updateUIForUser() {
             const authBtns = document.getElementById('authButtons');
@@ -1102,6 +1182,9 @@
             const nameDisplay = document.getElementById('userNameDisplay');
             const roleBadge = document.getElementById('userRoleBadge');
             const avatar = document.getElementById('userAvatar');
+            const adminLink = document.getElementById('adminLink');
+            const addVideoBtn = document.getElementById('addVideoBtn');
+            const addNewsBtn = document.getElementById('addNewsBtn');
 
             if (currentUser) {
                 authBtns.style.display = 'none';
@@ -1113,33 +1196,144 @@
                     currentRole === 'admin' ? '🛡️ Admin' : '⭐ Member';
                 roleBadge.textContent = roleText;
                 roleBadge.className = 'role-badge ' + (currentRole || 'member');
+
+                if (isAdmin()) {
+                    adminLink.style.display = 'inline-block';
+                    addVideoBtn.style.display = 'inline-block';
+                    addNewsBtn.style.display = 'inline-block';
+                } else {
+                    adminLink.style.display = 'none';
+                    addVideoBtn.style.display = 'none';
+                    addNewsBtn.style.display = 'none';
+                }
             } else {
                 authBtns.style.display = 'flex';
                 userPanel.style.display = 'none';
+                adminLink.style.display = 'none';
+                addVideoBtn.style.display = 'none';
+                addNewsBtn.style.display = 'none';
             }
         }
 
-        function logout() {
-            if (!confirm('مطمئنی میخوای خارج شی داداش؟')) return;
+        // ============================================================
+        // ===== VIDEO CRUD =====
+        // ============================================================
 
-            const name = currentUser;
-            currentUser = null;
-            currentRole = null;
-            localStorage.removeItem('gmUser');
-            updateUIForUser();
-            updateOnlineList();
-
-            messages.push({
-                user: '🎮 سیستم',
-                text: `${name} از چت خارج شد!`,
-                time: getCurrentTime()
-            });
-            localStorage.setItem('gmMessages', JSON.stringify(messages));
-            renderChat();
+        function openVideoModal() {
+            if (!isAdmin()) { alert('فقط ادمین‌ها میتونن ویدیو اضافه کنن!'); return; }
+            document.getElementById('videoModal').classList.add('active');
+            document.getElementById('videoError').textContent = '';
+            document.getElementById('videoTitle').value = '';
+            document.getElementById('videoLink').value = '';
+            document.getElementById('videoType').value = 'youtube';
         }
 
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        function closeVideoModal() {
+            document.getElementById('videoModal').classList.remove('active');
+        }
+
+        function addVideo() {
+            const title = document.getElementById('videoTitle').value.trim();
+            const link = document.getElementById('videoLink').value.trim();
+            const type = document.getElementById('videoType').value;
+            const error = document.getElementById('videoError');
+
+            if (!title) { error.textContent = 'عنوان ویدیو رو بنویس داداش!'; return; }
+            if (!link) { error.textContent = 'لینک ویدیو رو بده داداش!'; return; }
+
+            const now = new Date();
+            const date = now.toLocaleDateString('fa-IR', { year: 'numeric', month: '2-digit', day: '2-digit' });
+
+            videos.push({
+                id: Date.now(),
+                title: title,
+                link: link,
+                type: type,
+                uploader: currentUser,
+                date: date
+            });
+
+            localStorage.setItem('gmVideos', JSON.stringify(videos));
+            closeVideoModal();
+            renderVideos();
+            renderStats();
+            renderAdminStats();
+        }
+
+        function deleteVideo(id) {
+            if (!confirm('مطمئنی میخوای این ویدیو رو حذف کنی داداش؟')) return;
+            videos = videos.filter(v => v.id !== id);
+            localStorage.setItem('gmVideos', JSON.stringify(videos));
+            renderVideos();
+            renderStats();
+            renderAdminStats();
+        }
+
+        // ============================================================
+        // ===== NEWS CRUD =====
+        // ============================================================
+
+        function openNewsModal() {
+            if (!isAdmin()) { alert('فقط ادمین‌ها میتونن خبر اضافه کنن!'); return; }
+            document.getElementById('newsModal').classList.add('active');
+            document.getElementById('newsError').textContent = '';
+            document.getElementById('newsTitle').value = '';
+            document.getElementById('newsBody').value = '';
+        }
+
+        function closeNewsModal() {
+            document.getElementById('newsModal').classList.remove('active');
+        }
+
+        function addNews() {
+            const title = document.getElementById('newsTitle').value.trim();
+            const body = document.getElementById('newsBody').value.trim();
+            const error = document.getElementById('newsError');
+
+            if (!title) { error.textContent = 'عنوان خبر رو بنویس داداش!'; return; }
+            if (!body) { error.textContent = 'متن خبر رو بنویس داداش!'; return; }
+
+            const now = new Date();
+            const date = now.toLocaleDateString('fa-IR', { year: 'numeric', month: '2-digit', day: '2-digit' });
+
+            news.push({
+                id: Date.now(),
+                title: title,
+                body: body,
+                author: currentUser,
+                date: date
+            });
+
+            localStorage.setItem('gmNews', JSON.stringify(news));
+            closeNewsModal();
+            renderNews();
+            renderStats();
+            renderAdminStats();
+        }
+
+        function deleteNews(id) {
+            if (!confirm('مطمئنی میخوای این خبر رو حذف کنی داداش؟')) return;
+            news = news.filter(n => n.id !== id);
+            localStorage.setItem('gmNews', JSON.stringify(news));
+            renderNews();
+            renderStats();
+            renderAdminStats();
+        }
+
+        // ============================================================
+        // ===== CLEAR =====
+        // ============================================================
+
+        function clearAllData() {
+            if (!confirm('مطمئنی میخوای همه چیز رو پاک کنی داداش؟ این کار برگشت نداره!')) return;
+            if (!confirm('دوباره تأیید میکنی؟')) return;
+
+            videos = [];
+            news = [];
+            localStorage.removeItem('gmVideos');
+            localStorage.removeItem('gmNews');
+            renderAll();
+            alert('همه چیز پاک شد داداش!');
         }
 
         // ============================================================
@@ -1148,8 +1342,11 @@
 
         document.addEventListener('DOMContentLoaded', init);
 
-        document.getElementById('modalOverlay').addEventListener('click', function(e) {
-            if (e.target === this) closeModal();
+        // Close modals on overlay click
+        document.querySelectorAll('.modal-overlay').forEach(el => {
+            el.addEventListener('click', function(e) {
+                if (e.target === this) this.classList.remove('active');
+            });
         });
     </script>
 
